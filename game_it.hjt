@@ -1,0 +1,5470 @@
+<Treepad version 3.0>
+dt=Text
+<node>
+main
+0
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+config
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:JerryToddBulbs
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+title:Jerry Todd e i Bulbi Assassini
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+author:Gianluca Gemelli+Marco Giorgini
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+engine:StoryTllrC64
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+version:0.9.0
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+binary:yes
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+model:VGA
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+build
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bitvars_check:1
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+_emit_texts:1
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+_string_checksimilarity:1
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+localization
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+and:e
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+_font:png/it_font.png
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+include:stdlib_it.hjt
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+genericverb
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wait
+2
+msg:I ragazzi restano in ascolto per un momento. Non cambia nulla.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:aspetta,attendi,z
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+run
+2
+msg:Sei pronto, ma qui non serve mettersi a correre.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:corri
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+untie
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:slega,libera,sciogli
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:tira,spara,colpisci
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+throw
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:lancia,scaglia
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hide
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:nasconditi,appostati
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+follow
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:segui,insegui
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+climb
+2
+msg:Qui non vedi nulla su cui valga la pena arrampicarsi.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sali,scala,arrampicati
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onenter
+2
+clear
+ifundef:$room.shortdesc
+	msg:Ti trovi in +
+	msg:$roomname
+else
+	msg:Ti trovi +
+	msg:$room.shortdesc
+endif
+msg:.
+ifundef:$room.exits
+	msg:Non ci sono uscite evidenti.
+else
+	msg:Le uscite visibili sono a +
+	msg:$room.exits
+	msg:.
+endif
+ifobjinattr:$any,$here,visible+listable
+	msg:Vedi: +
+	listobjin:$here,visible+listable
+endif
+if:withfriends
+	ifisin:peg,$here
+	else
+		msg:Peg, Red e Scoop ti raggiungono.
+	endif
+	put:peg,$here
+	put:red,$here
+	put:scoop,$here
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+2
+clear
+msg:$roomdesc
+ifdef:$room.exits	
+	msg:Le uscite visibili sono a +
+	msg:$room.exits
+	msg:.
+endif
+ifobjinattr:$any,$here,visible+listable
+	msg:Vedi: +
+	listobjin:$here,visible+listable
+endif
+if:withfriends
+	ifisin:peg,$here
+	else
+		msg:Peg, Red e Scoop ti raggiungono.
+	endif
+	put:peg,$here
+	put:red,$here
+	put:scoop,$here
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+actor
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bill
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Bill Hadley
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Bill ascolta con attenzione prima di agire.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:bill_office
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:bill,hadley,bill hadley
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:bill,$available
+	if:danger
+		msg:Racconti a Bill di Cap, dell'alambicco e dell'attacco imminente. Bill si alza subito. "Chiedere aiuto? Ci andiamo immediatamente!"
+		msg:Tu e Bill correte al vivaio. Bill fa il giro per intercettare il signor Bulb, mentre raggiungi i tuoi amici nella stanza dei rinvasi.
+		set:help_called
+		unset:jerry_away
+		set:withfriends
+		put:bill,potting_room
+		unset:jerry_alone
+		waitkey
+		goto:potting_room_finale
+	else
+		if:note_read
+			msg:Bill ascolta, ma un appuntamento mancato non dimostra che sia stato commesso un crimine. "Scoprite dove è andato Cap e avvertitemi se è nei guai."
+		else
+			msg:Bill saluta la banda. "Andate ad aiutare Cap, oggi?"
+		endif
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+cap
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Cap Tinkertop
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Cap Tinkertop, il vecchio amico della banda.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cap,capitano,tinkertop
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:cap,$available
+	if:cap_free
+		msg:Cap è scosso, ma riesce a camminare con un po' di aiuto.
+	else
+		msg:Cap ha i polsi legati dietro la schiena. È vivo e bisogna liberarlo subito.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:cap,$available
+	if:cap_free
+		msg:"La signora Bulb è andata a chiamare suo marito", dice Cap. "Vuole farmi tacere. Chiamate Bill e tenete chiusa quella porta!"
+	else
+		msg:Cap riesce soltanto a emettere suoni soffocati. Prima bisogna liberarlo dalle corde.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+untie
+4
+ifobjin:cap,$available
+	if:cap_free
+		msg:Cap è già libero.
+	else
+		set:cap_free
+		set:danger
+		put:cap,potting_room
+		msg:Red scioglie i nodi mentre Peg sorregge Cap. "Una distilleria clandestina!" ansima Cap. "L'ho scoperta mentre riparavo l'impianto di irrigazione. La signora Bulb è andata a chiamare suo marito. Se riesce a entrare, mi ucciderà."
+		msg:Scoop accompagna Cap nella stanza dei rinvasi. "Jerry deve andare a chiamare Bill. Noi puntelleremo la porta."
+		waitkey
+		goto:potting_room
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+mrsbulb
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:la signora Bulb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+La signora Bulb sorveglia l'ingresso del suo vivaio.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:nursery_front
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:signora bulb,signora,bulb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:mrsbulb,$available
+	if:tracks_seen
+		set:bulb_denied
+		msg:Scoop chiede spiegazioni sulle impronte della gamba di legno. La signora Bulb si irrigidisce. "Sono vecchie. Oggi non è stato qui. Ora uscite dal mio cortile."
+	else
+		msg:Scoop chiede di Cap. "Gli avevo chiesto di riparare l'impianto di irrigazione", dice la signora Bulb, "ma non è mai arrivato."
+		ifnot:bulb_denied
+			set:bulb_denied
+			msg:Mentre la signora Bulb si volta, noti diverse impronte nel terreno soffice accanto all'ingresso.
+			msg:Tra le impronte degli scarponi, noti una serie di piccole depressioni circolari.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+peg
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Peg
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:red_barn
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Peg è il più grosso e forte dei tuoi amici. Le sue spalle larghe e il suo buonumore costante ne fanno un compagno rassicurante. Preferisce dare una mano piuttosto che tenere un discorso.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:peg
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:peg,$available
+	ifisroom:red_barn
+	else
+		ifisroom:riverside_path
+			if:nest_seen
+				msg:"Sono troppi per una zuffa silenziosa", sussurra Peg. "Ci serve un'idea migliore."
+			else
+				msg:Peg tiene bassa la voce. "Guardiamo i cespugli prima di avvicinarci."
+			endif
+		else
+			msg:Peg ti resta vicino, cercando con lo sguardo qualcosa di utile.
+		endif
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+red
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Red
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:red_barn
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Di solito è più facile avvistare i capelli rossi di Red che la sua ultima invenzione. Nota viti allentate, fermi nascosti e oggetti che potrebbero tornare utili. Il lanciapomodori rotto è uno dei suoi progetti più recenti.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:red
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:red,$available
+	ifisroom:red_barn
+	else
+		ifisroom:riverside_path
+			if:nest_seen
+				msg:"Il lanciapomodori è rotto, ma l'elastico è ancora buono", sussurra Red. "Con un sasso potrebbe far cadere quel nido."
+			else
+				msg:Red tiene bassa la voce. "Guardiamo i cespugli prima di avvicinarci."
+			endif
+		else
+			msg:Red ti resta vicino, cercando con lo sguardo qualcosa di utile.
+		endif
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scoop
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Scoop
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:red_barn
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Scoop ha la lingua pronta e la testa piena di piani. Gli piace fare domande e mettere insieme gli indizi, anche se a volte la sua sicurezza mette nei guai tutta la banda.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:scoop
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:scoop,$available
+	ifisroom:red_barn
+	else
+		ifisroom:riverside_path
+			if:nest_seen
+				msg:"Stanno guardando il sentiero, non i rami sopra di loro", sussurra Scoop.
+			else
+				msg:Scoop tiene bassa la voce. "Guardiamo i cespugli prima di avvicinarci."
+			endif
+		else
+			msg:Scoop ti resta vicino, cercando con lo sguardo qualcosa di utile.
+		endif
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+striekers
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:gli Strieker
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Gli Strieker sono gli irriducibili rivali della banda, sempre pronti a una provocazione o a un'imboscata.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:riverside_path
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:strieker,striekers,striker,strikers,strickers,ragazzi
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifisroom:riverside_path
+	if:ambush_cleared
+		msg:Gli Strieker se ne sono andati.
+	else
+		msg:Resti in silenzio. Chiamarli rivelerebbe la presenza della banda prima ancora di avere un piano.
+	endif
+else
+	ifobjin:striekers,$available
+		msg:Scoop chiede loro di abbassare la voce. Quelli si mettono a ridere. Peg si piazza tra loro e il nascondiglio.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+4
+ifisroom:riverside_path
+	if:ambush_cleared
+		msg:Gli Strieker se ne sono andati.
+	else
+		msg:Non puoi avvicinarti senza finire dritto nell'imboscata. Dovresti esaminare i cespugli.
+	endif
+else
+	ifobjin:striekers,$available
+		put:striekers,$nowhere
+		set:truck_seen
+		put:truck,hedge_watch
+		msg:Peg spinge un pesante cesto nel varco e avanza verso gli Strieker. Quelli indietreggiano, poi se la danno a gambe. Vi rannicchiate di nuovo dietro i cesti.
+		msg:Poco dopo sentite un motore. Un camion entra lentamente nel cortile di carico e si ferma accanto alla porta del vivaio. Il conducente scende dalla cabina e bussa.
+		msg:La porta si socchiude. L'uomo scambia poche parole con qualcuno all'interno, poi spegne il motore.
+		msg:Scoop ti tocca il braccio. "Aspetta. Vediamo cosa sono venuti a caricare."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:striekers,$available
+	ifisroom:riverside_path
+		msg:Gli Strieker sono accovacciati nei cespugli più avanti e tengono d'occhio il sentiero. I tuoi amici restano nascosti. Avvicinarti direttamente significherebbe finire nella loro imboscata.
+	else
+		msg:Gli Strieker bloccano il varco tra i cesti e parlano apposta a voce alta. Se continuano così, qualcuno del vivaio verrà a vedere cosa succede.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+normalobj
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+boards
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:alcune assi
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Assi corte e abbastanza robuste da puntellare un mobile contro una porta.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:potting_room
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:assi,asse,tavole,tavola,puntelli
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Scoop suggerisce di conservarle finché questa faccenda non sarà risolta.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+ifobjin:$this,$available
+	ifisroom:potting_room
+		if:boards_set
+			msg:Le assi sono già incastrate al loro posto.
+		else
+			if:danger
+				ifobjin:boards,$inventory
+					if:bench_set
+						if:boards_set
+							msg:Le assi sono già incastrate al loro posto.
+						else
+							set:boards_set
+							put:boards,$here
+							msg:Red incastra le assi tra il banco e la parete. Scoop prova il sostegno: dovrebbe reggere fino all'arrivo dei soccorsi.
+						endif
+					else
+						msg:Prima Peg deve mettere il banco contro la porta.
+					endif
+				else
+					msg:Prima bisogna raccogliere ciò che si vuole usare.
+				endif
+			else
+				msg:Le assi potrebbero servire più tardi.
+			endif
+		endif
+	else
+		msg:Le assi servono nella stanza dei rinvasi.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+chair
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sedia
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:una sedia
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+ifobjin:$this,$available
+	ifisroom:potting_room
+		msg:Colpisci la finestra con la sedia. Il vetro va in frantumi e la sedia si spezza.
+		set:window_opened
+		put:chair,$nowhere
+	else
+		msg:Non è il momento di sedersi.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:chair,$inventory
+	msg:È una solida sedia di legno.
+else
+	ifnot:window_opened
+		ifisroom:hidden_room
+			if:cap_free
+				msg:È una solida sedia di legno.
+			else
+				msg:È una solida sedia di legno, e Cap ci è seduto sopra.
+			endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+take
+4
+ifobjin:chair,$inventory
+	msg:È già nel tuo inventario.
+else
+	ifisroom:hidden_room
+		if:cap_free
+			if:window_opened
+				msg:Qui non vedi un'altra sedia.
+			else
+				put:chair,$inventory
+				msg:Fatto.
+			endif
+		else
+			msg:Cap ci è ancora seduto sopra!
+		endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+coin
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:moneta
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:una moneta
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+elastic
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:un robusto elastico
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:elastico,fionda
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr:visible+takeable
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Un robusto elastico del lanciapomodori rotto di Red. Teso tra le tue dita, potrebbe scagliare un sasso.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+take
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+move
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+untie
+4
+ifobjin:elastic,$inventory
+	msg:Hai già l'elastico.
+else
+	ifisroom:red_barn_yard
+		if:elastic_removed
+			msg:Hai già staccato l'elastico.
+		else
+			if:nest_seen
+				set:elastic_removed
+				put:elastic,$inventory
+				msg:Sganci l'elastico dal telaio rotto. Red lo tende con cautela. "Con un sasso andrà bene per il nostro bersaglio."
+			else
+				msg:Lasci l'elastico al suo posto. Per ora non c'è motivo di smontare l'invenzione di Red.
+			endif
+		endif
+	else
+		msg:L'elastico è ancora sul lanciapomodori rotto, nel cortile della fattoria.
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+throw
+4
+ifobjin:$this,$available
+	ifisroom:riverside_path
+		if:ambush_cleared
+			msg:Gli Strieker se ne sono andati. Lasci in pace le vespe.
+		else
+			if:nest_seen
+				ifobjin:elastic,$inventory
+					ifobjin:stone,$inventory
+						set:ambush_cleared
+						put:stone,$nowhere
+						put:striekers,$nowhere
+						msg:Tendi l'elastico, sistemi il sasso e miri al ramo sopra gli Strieker. Il colpo stacca il nido, che cade nei cespugli. Un ronzio furioso mette in fuga i ragazzi attraverso i campi.
+						msg:Tu e i tuoi amici vi tenete lontani dalle vespe e vi affrettate lungo il ruscello fino alla stradina del paese. Anche la signora Smith e le sue amiche se ne sono andate: ora entrambi i percorsi per casa di Cap sono liberi.
+						waitkey
+						goto:town_lane
+					else
+						msg:Hai l'elastico, ma ti serve una piccola pietra. Lungo la riva del ruscello ci sono dei sassi lisci.
+					endif
+				else
+					msg:Un sasso lanciato a mano sarebbe troppo impreciso. Red ricorda l'elastico ancora buono del lanciapomodori rotto nel cortile della fattoria.
+				endif
+			else
+				msg:Hai bisogno di un bersaglio sicuro. Prima di tentare qualcosa dovresti esaminare i cespugli e i rami.
+			endif
+		endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Tieni in tasca l'utile elastico.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hat
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:il cappello di Cap
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Il vecchio cappello di Cap, con la familiare toppa all'interno della tesa.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cappello,cappello di cap
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Scoop suggerisce di conservarlo finché questa faccenda non sarà risolta.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:hat,$available
+	msg:Controlli la toppa. "È proprio il cappello di Cap."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+screwdriver
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cacciavite
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:un cacciavite
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Un comune cacciavite della cassetta degli attrezzi di Cap. Cap ha chiesto ai ragazzi di portarlo per i lavori di oggi.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:cap_interior
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Scoop suggerisce di conservarlo finché questa faccenda non sarà risolta.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+spade
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:una vanga
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Una vanga in buone condizioni, lasciata accanto al capanno degli attrezzi.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:villa_garden
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:vanga,pala
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Scoop suggerisce di conservarla finché questa faccenda non sarà risolta.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sparekey
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:la chiave di riserva di Cap
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Una piccola chiave d'ottone per la porta d'ingresso di Cap.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:chiave,chiave di riserva
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Red tiene al sicuro la chiave di Cap finché non potranno restituirgliela.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+stone
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:un sasso liscio
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sasso,pietra,sassi,pietre
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:riverside_path
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Un piccolo sasso liscio della riva del ruscello, della misura giusta per una fionda improvvisata.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+throw
+4
+ifobjin:$this,$available
+	ifisroom:riverside_path
+		if:ambush_cleared
+			msg:Gli Strieker se ne sono andati. Lasci in pace le vespe.
+		else
+			if:nest_seen
+				ifobjin:elastic,$inventory
+					ifobjin:stone,$inventory
+						set:ambush_cleared
+						put:stone,$nowhere
+						put:striekers,$nowhere
+						msg:Tendi l'elastico, sistemi il sasso e miri al ramo sopra gli Strieker. Il colpo stacca il nido, che cade nei cespugli. Un ronzio furioso mette in fuga i ragazzi attraverso i campi.
+						msg:Tu e i tuoi amici vi tenete lontani dalle vespe e vi affrettate lungo il ruscello fino alla stradina del paese. Anche la signora Smith e le sue amiche se ne sono andate: ora entrambi i percorsi per casa di Cap sono liberi.
+						waitkey
+						goto:town_lane
+					else
+						msg:Hai l'elastico, ma ti serve una piccola pietra. Lungo la riva del ruscello ci sono dei sassi lisci.
+					endif
+				else
+					msg:Un sasso lanciato a mano sarebbe troppo impreciso. Red ricorda l'elastico ancora buono del lanciapomodori rotto nel cortile della fattoria.
+				endif
+			else
+				msg:Hai bisogno di un bersaglio sicuro. Prima di tentare qualcosa dovresti esaminare i cespugli e i rami.
+			endif
+		endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sceneryobj
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+truck
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:camion,autocarro
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:un camion in partenza
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Un camion con una sponda posteriore bassa.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:truck,$available
+	if:truck_seen
+		msg:La cassa è sul pianale, sotto il telone. Gli uomini stanno finendo di parlare alla porta del vivaio. Dal vostro nascondiglio potresti raggiungere la sponda posteriore senza passare davanti alla cabina.
+		msg:Scoop sussurra: "Vai, Jerry. Segui quel camion!"
+	else
+		set:truck_seen
+		put:hat,hedge_watch
+		msg:La porta del vivaio si apre. Il conducente e un secondo uomo escono reggendo una lunga cassa di legno. Quello che cammina all'indietro si ferma per riprendere fiato.
+		msg:"Piano, da questa parte", borbotta il conducente. Insieme sollevano la cassa fino al pianale. Quando la inclinano, da sotto il coperchio scivola un cappello.
+		msg:Red ti stringe il braccio. "È quello di Cap!"
+		msg:Gli uomini spingono la cassa sotto il telone, poi tornano alla porta per parlare con la signora Bulb. Il cappello è rimasto vicino ai cesti, a pochi passi dal vostro nascondiglio.
+		msg:Il telone è sollevato da un lato. Scoop lo indica. "Potresti nasconderti là sotto. Se ripartono con Cap, dobbiamo sapere dove lo portano. Noi aspetteremo una tua telefonata a casa sua."
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+climb
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+enter
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+ifobjin:truck,$available
+	if:truck_seen
+		msg:Gli uomini si voltano per tornare al camion. "Jerry, adesso!" sussurra Scoop.
+		msg:Scatti fuori dal nascondiglio mentre il conducente sale in cabina. Il motore si avvia e il camion comincia a muoversi. Afferri la sponda posteriore, ti issi sul pianale e scivoli sotto il telone senza farti vedere.
+		msg:Tra una piega e l'altra intravedi gli amici che si allontanano dal cortile. Scoop li sta riportando a casa di Cap, ad aspettare la tua telefonata.
+		set:jerry_alone
+		unset:withfriends
+		put:truck,$nowhere
+		put:crate,truck_bed
+		put:peg,cap_interior
+		put:red,cap_interior
+		put:scoop,cap_interior
+		waitkey
+		goto:truck_bed
+	else
+		msg:Scoop ti trattiene per la manica. "Aspetta. Non sappiamo ancora cosa sono venuti a caricare. Osserviamoli."
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+crate
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:una cassa di legno
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Una voluminosa cassa di legno con il coperchio inchiodato.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cassa,coperchio
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:$this,$available
+	if:crate_dug
+		msg:Ora il coperchio è allentato. La banda può aprirlo.
+	else
+		msg:Un pesante coperchio nasconde il contenuto. Qui non c'è modo di aprirlo senza rischi.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+4
+ifobjin:$this,$available
+	if:crate_dug
+		if:money_found
+			msg:Le mazzette di banconote sono ancora dentro. La banda lascia stare le prove.
+		else
+			set:money_found
+			msg:Peg solleva il coperchio. Non c'è Cap, ma mazzette di banconote! 
+			msg:Scoop controlla l'etichetta BULB sulla cassa. 
+			msg:"Quel cappello ci ha tratto in inganno. Cap dev'essere ancora al vivaio. Questi uomini stanno nascondendo i loro incassi."
+		endif
+	else
+		msg:Scoop impedisce alla banda di farsi scoprire aprendo la cassa qui.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+tomatolauncher
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:un lanciapomodori (rotto)
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:red_barn_yard
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:lanciapomodori,lancia pomodori,catapulta,lanciatore
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:$this,$available
+	if:elastic_removed
+		msg:Il lanciapomodori rotto giace accanto alla staccionata. Hai tolto l'elastico; il resto è irreparabile.
+	else
+		put:elastic,red_barn_yard
+		msg:Accanto alla staccionata giace il lanciapomodori rotto, ancora macchiato dalla recente battaglia della banda contro gli Strieker.
+		msg:Ha il telaio spaccato e il braccio piegato. Ormai è inutilizzabile, ma il robusto elastico è intatto e si potrebbe staccare.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+ifobjin:$this,$available
+	msg:Il telaio è rotto. Red scuote la testa. "Questo non lancerà più pomodori."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+globalscenery
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+gang
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:la banda
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Scoop, Peg e Red sono i tuoi migliori amici.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:banda,amici,compagni
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+room
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+$start
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Jerry Todd e i Bulbi Assassini
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:Questa avventura è stata concepita da #Gianluca #Gemelli e adattata da #Marco #Giorgini ed è ambientata nel mondo letterario di #Jerry #Todd, creato negli anni '20 da #Leo #Edwards. 
+msg:In questo gioco tu impersonerai proprio #Jerry, un ragazzino dell'America rurale di inizio novecento, che, insieme ai suoi amici, difficilmente riesce a stare lontano dai guai.
+setvar:pressure,0
+set:withfriends
+waitkey
+goto:red_barn
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/title_it.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+_end
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:I Bulb smascherati
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:Bill raggiunge il vivaio prima che la barricata ceda. Il signor Bulb e i suoi uomini vengono fermati; Cap è al sicuro.
+msg:La distilleria e il denaro sepolto spiegano gli affari dei Bulb: a rovinarli sono bastati un vecchio brontolone e una perdita nell'impianto di irrigazione.
+msg:"Bulbi assassini!" esclama Red, guardando le casse di bulbi.
+msg:"Quasi", risponde Cap. "La prossima volta, ragazzi, se trovo un tubo sospetto lo lascio perdere."
+msg:Sorridi. Scoop ha già in mente come raccontare la storia, ma Peg ha fame e Red sostiene che un gelato ve lo siete proprio meritato.
+msg:Bill vi guarda severo, poi sorride e annuisce. La banda si è guadagnata un pomeriggio tranquillo.
+msg:FINE
+waitkey
+quit
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/_end.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+_caught
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:La barricata cede
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:La porta non puntellata si spalanca prima che i soccorsi possano raggiungere Cap. Il salvataggio è fallito.
+msg:Vuoi riprovare? (S/N)
+getkey
+ifkey:S
+	start
+else
+	quit
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/_caught.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+red_barn
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Il granaio di Red
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Il caldo estivo ristagna sotto le travi del granaio. Sacchi di cereali e casse vuote offrono comodi posti a sedere, mentre il sole entra da una finestra aperta e illumina la polvere sospesa nell'aria. L'odore del fieno secco riempie l'ambiente.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+nel granaio di Red
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[est]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.e
+3
+red_barn_yard
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/red_barn.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:In una mattina afosa, stai chiacchierando con Peg, Red e Scoop nel granaio di Red. 
+msg:"Con questo caldo ci vorrebbe proprio un gelato", dice a un certo punto Scoop. Ma, come quasi sempre capita, nessuno ha un soldo.
+waitkey
+clear
+msg:$roomdesc
+ifdef:$room.exits	
+	msg:Le uscite visibili sono a +
+	msg:$room.exits
+	msg:.
+endif
+ifobjinattr:$any,$here,visible+listable
+	msg:Vedi: +
+	listobjin:$here,visible+listable
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:red
+5
+if:!note_read
+	if:job_remembered
+		msg:Red: "Cap ci ha promesso un lavoro. Andiamo a trovarlo. Prima la paga, poi il gelato."
+	else
+		set:job_remembered
+		msg:Red si raddrizza. "Cap aveva promesso di pagarci per aiutarlo con dei lavoretti!" 
+		msg:Scoop è già in piedi. "Allora andiamo da Cap. Prima il lavoro, poi il gelato."
+	endif
+else
+	msg:Scoop: "Non troveremo Cap restando nel granaio. È stato chiamato al vivaio."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:peg
+5
+if:!note_read
+	if:job_remembered
+		msg:Peg: "Cap ci ha promesso un lavoro. Andiamo a trovarlo. Prima la paga, poi il gelato."
+	else
+		msg:Peg si batte sulle tasche vuote. "Neanche abbastanza per una pallina."
+		msg:Red però ha un'espressione curiosa.
+	endif
+else
+	msg:Scoop: "Non troveremo Cap restando nel granaio. È stato chiamato al vivaio."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:scoop
+5
+if:!note_read
+	if:job_remembered
+		msg:Scoop: "Cap ci ha promesso un lavoro. Andiamo a trovarlo. Prima la paga, poi il gelato."
+	else
+		msg:"Zero assoluto", dice Scoop.
+		msg:Red però ha un'espressione curiosa.
+	endif
+else
+	msg:Scoop: "Non troveremo Cap restando nel granaio. È stato chiamato al vivaio."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:$none
+5
+if:!note_read
+	if:job_remembered
+		msg:Scoop: "Cap ci ha promesso un lavoro. Andiamo a trovarlo. Prima la paga, poi il gelato."
+	else
+		msg:Gli amici si frugano le tasche ma poi tutti scuotono la testa.
+		msg:Red però ha un'espressione curiosa.
+	endif
+else
+	msg:Scoop: "Non troveremo Cap restando nel granaio. È stato chiamato al vivaio."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Torniamo alla villa. Dobbiamo scoprire cosa nascondono quegli uomini."
+		else
+			if:ambush_cleared
+				msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+			else
+				if:note_read
+					msg:Scoop: "Non troveremo Cap restando nel granaio. È stato chiamato al vivaio."
+				else
+					if:job_remembered
+						msg:Scoop: "Andiamo da Cap. Prima il lavoro, poi il gelato."
+					else
+						msg:Peg: "Niente soldi, niente gelato. Red, perché fai quella faccia?"
+					endif
+				endif
+			endif
+		endif
+	endif
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+4
+if:job_remembered
+	goto:red_barn_yard
+else
+	msg:Scoop resta seduto sulla cassa. "Prima di andarcene in giro, parliamo di come guadagnarci il gelato."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sacks
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+I sacchi di cereali sono impilati all'ombra. Sono sedili sorprendentemente comodi.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sacchi,cereali,grano
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+emptycrates
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Le casse vuote servono da sedili ai ragazzi. Non nascondono nulla di utile.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:casse,sedili
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+barnwindow
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Oltre la finestra aperta, la calura estiva fa tremolare l'aria sul sentiero per casa di Cap.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:finestra,brezza
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+pockets
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Quattro paia di tasche e nemmeno un soldo.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:tasche,soldi,denaro,monete
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:Rovesci le tasche. Peg fruga ancora nelle sue. Scoop sospira. "Un gelato a credito? Neanche per sogno."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+rafters
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:travi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hay
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:fieno
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+barn
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:granaio
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+red_barn_yard
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Il cortile del granaio di Red
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Un vecchio albero ombreggia parte del cortile polveroso della fattoria. Il granaio di Red si alza oltre una staccionata segnata dal tempo, con barili e casse vuote accatastati contro la parete.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+nel cortile del granaio di Red
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[sud,ovest]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.w
+3
+red_barn
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.s
+3
+cap_porch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/red_barn_yard.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+tree
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:albero
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+fence
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:staccionata,recinto
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+barrels
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:barili,botti
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+crates
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:casse
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+barn
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:granaio
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wall
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:parete,muro
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+house
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:casa
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Torniamo alla villa. Dobbiamo scoprire cosa nascondono quegli uomini."
+		else
+			if:ambush_cleared
+				msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+			else
+				if:note_read
+					if:nest_seen
+						ifobjin:elastic,$inventory
+							ifobjin:stone,$inventory
+								msg:Red: "Hai tutto quello che serve. Torniamo al sentiero lungo il ruscello."
+							else
+								msg:Red: "Ora ci serve un sasso. Ne abbiamo visti lungo la riva del ruscello."
+							endif
+						else
+							msg:Red: "Il lanciapomodori è rotto, ma possiamo staccare il suo elastico."
+						endif
+					else
+						msg:Scoop: "Torniamo al portico di Cap e cerchiamo una strada per il vivaio."
+					endif
+				else
+					msg:Scoop: "Andiamo da Cap. Il suo portico è a sud."
+				endif
+			endif
+		endif
+	endif
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+cap_porch
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Il portico di Cap Tinkertop
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Il piccolo portico di Cap ha il confortevole disordine di un posto molto vissuto. Una sedia di legno è accanto alla porta d'ingresso e un vaso di terracotta poggia sulla ringhiera. Stamattina tutto è insolitamente silenzioso.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+sul portico di Cap Tinkertop
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[nord,sud,sudovest,est]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+red_barn_yard
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.sw
+3
+riverside_path
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/cap_porch.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+flowerpot
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Un vaso di terracotta poggia sulla ringhiera del portico. C'è spazio sotto il sottovaso.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:vaso,vaso di terracotta,sottovaso
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+move
+6
+if:key_found
+	msg:Red ha già controllato sotto il vaso.
+else
+	set:key_found
+	put:sparekey,$here
+	msg:Red solleva il vaso. Sotto c'è una piccola chiave d'ottone. "Cap me l'ha mostrata nel caso fosse fuori quando venivamo a lavorare."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+capdoor
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+La porta d'ingresso di Cap ha una semplice serratura d'ottone.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:porta,porta di ingresso,serratura
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+unlock
+6
+if:capdoor_unlocked
+	msg:La porta di Cap è già sbloccata.
+else
+	ifobjin:sparekey,$inventory
+		set:capdoor_unlocked
+		msg:Red infila la chiave di riserva nella serratura e la gira, aprendo la porta.
+		msg:Scoop grida: "Cap? Siamo noi!" ma non si sente nessuna risposta.
+	else
+		msg:Prima bisogna trovare una chiave.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+6
+if:capdoor_unlocked
+	msg:Scoop apre la porta. La piccola stanza d'ingresso è a est.
+else
+	msg:La porta è chiusa a chiave. Red ricorda che Cap gli aveva mostrato una chiave di riserva da qualche parte sul portico.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+smith
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+La signora Smith e le sue amiche chiacchierano lungo la stradina a sud. È ancora arrabbiata per lo scherzo di ieri. Per ora preferisci prendere il sentiero lungo il ruscello a sudovest.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:smith,signora smith,donne,signore,amiche
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:ambush_cleared
+	msg:La signora Smith e le sue amiche se ne sono andate. La stradina a sud è libera.
+else
+	msg:La signora Smith e le sue amiche chiacchierano lungo la stradina a sud. È ancora arrabbiata per lo scherzo di ieri. Preferisci prendere il sentiero lungo il ruscello a sudovest.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+porch
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:portico,ringhiera
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+chair
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sedia
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:sparekey
+5
+if:capdoor_unlocked
+	msg:La porta di Cap è già sbloccata.
+else
+	ifobjin:sparekey,$inventory
+		set:capdoor_unlocked
+		msg:Red infila la chiave di riserva nella serratura e la gira, aprendo la porta.
+		msg:Scoop grida: "Cap? Siamo noi!" ma non si sente nessuna risposta.
+	else
+		msg:Prima bisogna trovare una chiave.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+4
+if:capdoor_unlocked
+	goto:cap_interior
+else
+	msg:La porta d'ingresso è chiusa a chiave.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+s
+4
+if:note_read
+	if:ambush_cleared
+		goto:town_lane
+	else
+		set:smith_seen
+		msg:Lungo la stradina, la signora Smith chiacchiera con alcune amiche. 
+		msg:"Difficile che abbia dimenticato lo scherzo di ieri", dice Scoop. "Meglio se seguiamo il sentiero lungo il ruscello a sudovest."
+	endif
+else
+	msg:Prima di allontanarsi è meglio scoprire dove è andato Cap. Potrebbe aver lasciato un messaggio dentro casa.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sw
+4
+if:note_read
+	goto:riverside_path
+else
+	msg:Prima di allontanarsi è meglio scoprire dove è andato Cap. Potrebbe aver lasciato un messaggio dentro casa.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Torniamo alla villa. Dobbiamo scoprire cosa nascondono quegli uomini."
+		else
+			if:ambush_cleared
+				msg:Scoop: "La strada a sud è libera. Torniamo al vivaio."
+			else
+				if:note_read
+					if:nest_seen
+						ifobjin:elastic,$inventory
+							msg:Red: "Torniamo al sentiero lungo il ruscello. Lì possiamo usare l'elastico e cercare un sasso."
+						else
+							msg:Red: "Torniamo al cortile del granaio a prendere l'elastico del lanciapomodori."
+						endif
+					else
+						if:smith_seen
+							msg:Scoop: "La signora Smith è ancora sulla strada a sud. Proviamo il sentiero a sudovest."
+						else
+							msg:Scoop: "Cap è stato chiamato al vivaio. Vediamo quale strada possiamo prendere."
+						endif
+					endif
+				else
+					if:capdoor_unlocked
+						msg:Scoop: "Entriamo a vedere se Cap ha lasciato un messaggio."
+					else
+						if:key_found
+							ifobjin:sparekey,$inventory
+								msg:Red: "Proviamo la chiave nella serratura."
+							else
+								msg:Red: "La chiave è sotto il vaso. Non lasciamola lì."
+							endif
+						else
+							msg:Red: "Cap mi aveva mostrato una chiave di riserva sotto quel vaso."
+						endif
+					endif
+				endif
+			endif
+		endif
+	endif
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+cap_interior
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Dentro casa di Cap
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Il sole illumina la modesta stanza d'ingresso di Cap. Un biglietto piegato è sul tavolo accanto alla cassetta degli attrezzi, mentre una sedia di legno è rivolta verso la finestra. Un vecchio telefono è appeso alla parete. La stanza dà l'impressione che il suo proprietario contasse di tornare presto.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+in casa di Cap
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[ovest]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.w
+3
+cap_porch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/cap_interior.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		ifobjin:screwdriver,$inventory
+			msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+		else
+			msg:Red: "Prendiamo il cacciavite prima di tornare al vivaio."
+		endif
+	else
+		if:gang_reunited
+			msg:Scoop: "Torniamo alla villa. Dobbiamo scoprire cosa nascondono quegli uomini."
+		else
+			if:note_read
+				if:ambush_cleared
+					msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+				else
+					msg:Scoop: "Sappiamo dove cercare Cap: andiamo al vivaio."
+				endif
+			else
+				msg:Scoop: "Quel biglietto sul tavolo potrebbe spiegare dove è andato Cap."
+			endif
+		endif
+	endif
+else
+	msg:Gli altri aspettano tue notizie: non sono qui con te.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+note
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Un biglietto piegato lasciato sul tavolo.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:biglietto,messaggio,lettera
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+set:note_read
+msg:Red legge: "Capitano, la prego di venire al vivaio per riparare il mio impianto di irrigazione. - Signora Bulb." 
+msg:Scoop incrocia le braccia. "Allora raggiungiamolo al vivaio."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+toolbox
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Cap ha preparato un cacciavite per i lavori che i ragazzi faranno stamattina.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cassetta,cassetta degli attrezzi,attrezzi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+homephone
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Il telefono di Cap è silenzioso. Se avrai notizie da comunicare, gli altri potranno aspettare qui la tua chiamata.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:telefono,telefono di cap
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+table
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:tavolo
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+chair
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sedia
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+window
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:finestra,finestra laterale
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wall
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:parete,muro
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+house
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:casa,stanza
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+riverside_path
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Il sentiero lungo il ruscello
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/riverside_path.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Lo stretto sentiero segue un tranquillo ruscello sotto alberi dai rami sporgenti. Sassi lisci punteggiano la riva e fitti cespugli circondano una curva del tracciato. I rami si intrecciano sopra il sottobosco, nascondendo tra le foglie lembi di cielo.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+sul sentiero lungo il ruscello
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[nordest,sudest]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.ne
+3
+cap_porch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.se
+3
+town_lane
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:$roomdesc
+ifdef:$room.exits	
+	msg:Le uscite visibili sono a +
+	msg:$room.exits
+	msg:.
+endif
+if:withfriends
+	ifisin:peg,$here
+	else
+		msg:Peg, Red e Scoop ti raggiungono.
+	endif
+	put:peg,$here
+	put:red,$here
+	put:scoop,$here
+endif
+if:ambush_cleared
+else
+	msg:Ti fermi di colpo. Alcuni Strieker sono accovacciati nei cespugli alla curva e aspettano la banda per tenderle un'imboscata. Non ti hanno ancora visto.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+se
+4
+if:ambush_cleared
+	goto:town_lane
+else
+	msg:Alcuni degli Strieker sono accovacciati nei cespugli più avanti, pronti a tendere un'imboscata a te e ai tuoi amici. Ti fermi prima che ti vedano. Deve esserci un modo per allontanarli senza fare a pugni.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+4
+ifisroom:riverside_path
+	if:ambush_cleared
+		msg:Gli Strieker se ne sono andati. Lasci in pace le vespe.
+	else
+		if:nest_seen
+			ifobjin:elastic,$inventory
+				ifobjin:stone,$inventory
+					set:ambush_cleared
+					put:stone,$nowhere
+					put:striekers,$nowhere
+					msg:Tendi l'elastico, sistemi il sasso e miri al ramo sopra gli Strieker. Il colpo stacca il nido, che cade nei cespugli. Un ronzio furioso mette in fuga i ragazzi attraverso i campi.
+					msg:Tu e i tuoi amici vi tenete lontani dalle vespe e vi affrettate lungo il ruscello fino alla stradina del paese. Anche la signora Smith e le sue amiche se ne sono andate: ora entrambi i percorsi per casa di Cap sono liberi.
+					waitkey
+					goto:town_lane
+				else
+					msg:Hai l'elastico, ma ti serve una piccola pietra. Lungo la riva del ruscello ci sono dei sassi lisci.
+				endif
+			else
+				msg:Un sasso lanciato a mano sarebbe troppo impreciso. Red ricorda l'elastico ancora buono del lanciapomodori rotto nel cortile della fattoria.
+			endif
+		else
+			msg:Hai bisogno di un bersaglio sicuro. Prima di tentare qualcosa dovresti esaminare i cespugli e i rami.
+		endif
+	endif
+else
+	msg:Qui non c'è motivo di usare una fionda.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Torniamo alla villa. Dobbiamo scoprire cosa nascondono quegli uomini."
+		else
+			if:ambush_cleared
+				msg:Scoop: "Gli Strieker sono scappati. Il sentiero a sudest porta alla stradina del paese; da lì possiamo raggiungere il vivaio."
+			else
+				if:nest_seen
+					ifobjin:elastic,$inventory
+						ifobjin:stone,$inventory
+							msg:Red: "Hai elastico e sasso. Prova a colpire il nido sopra gli Strieker."
+						else
+							msg:Red: "L'elastico c'è. Raccogli uno di quei sassi lisci lungo la riva."
+						endif
+					else
+						msg:Red: "Ci serve l'elastico del lanciapomodori. Torniamo al cortile del granaio."
+					endif
+				else
+					msg:Peg: "Gli Strieker aspettano un passo falso. Guardiamo bene i cespugli prima di avvicinarci."
+				endif
+			endif
+		endif
+	endif
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+riverbushes
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+I fitti cespugli nascondono la curva del sentiero. Alcuni rami sovrastano il nascondiglio dei ragazzi.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:vegetazione,cespugli,arbusti,alberi,rami,foglie,sottobosco
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:ambush_cleared
+	msg:I cespugli sono deserti. Il nido rotto giace oltre il sentiero e te ne tieni ben lontano.
+else
+	set:nest_seen
+	msg:Sbirci tra le foglie. Gli Strieker aspettano sotto un ramo da cui pende un nido di vespe. Non devono averlo notato. 
+	msg:Red sussurra: "Un colpo di fionda potrebbe farlo cadere."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+waspnest
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Un nido di vespe, simile a un involucro di carta, pende sopra il nascondiglio degli Strieker.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:nido,nido di vespe,vespe,alveare
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:ambush_cleared
+	msg:I cespugli sono deserti. Il nido rotto giace oltre il sentiero e te ne tieni ben lontano.
+else
+	set:nest_seen
+	msg:Sbirci tra le foglie. Gli Strieker aspettano sotto un ramo da cui pende un nido di vespe. Non devono averlo notato. 
+	msg:Red sussurra: "Un colpo di fionda potrebbe farlo cadere."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+throw
+6
+ifisroom:riverside_path
+	if:ambush_cleared
+		msg:Gli Strieker se ne sono andati. Lasci in pace le vespe.
+	else
+		if:nest_seen
+			ifobjin:elastic,$inventory
+				ifobjin:stone,$inventory
+					set:ambush_cleared
+					put:stone,$nowhere
+					put:striekers,$nowhere
+					msg:Tendi l'elastico, sistemi il sasso e miri al ramo sopra gli Strieker. Il colpo stacca il nido, che cade nei cespugli. Un ronzio furioso mette in fuga i ragazzi attraverso i campi.
+					msg:Tu e i tuoi amici vi tenete lontani dalle vespe e vi affrettate lungo il ruscello fino alla stradina del paese. Anche la signora Smith e le sue amiche se ne sono andate: ora entrambi i percorsi per casa di Cap sono liberi.
+					waitkey
+					goto:town_lane
+				else
+					msg:Hai l'elastico, ma ti serve una piccola pietra. Lungo la riva del ruscello ci sono dei sassi lisci.
+				endif
+			else
+				msg:Un sasso lanciato a mano sarebbe troppo impreciso. Red ricorda l'elastico ancora buono del lanciapomodori rotto nel cortile della fattoria.
+			endif
+		else
+			msg:Hai bisogno di un bersaglio sicuro. Prima di tentare qualcosa dovresti esaminare i cespugli e i rami.
+		endif
+	endif
+else
+	msg:Qui non c'è motivo di usare una fionda.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+stream
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:ruscello,riva
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+grass
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:erba
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sky
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cielo
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+path
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sentiero
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+town_lane
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:La stradina del paese
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+La familiare stradina del paese corre tra case modeste, recinti di giardini e chiazze d'erba polverosa. In una mattina normale ci sarebbero consegne da schivare e vicini da salutare. Oggi il silenzio rende più riconoscibili le voci lontane e i motori di passaggio.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+sulla stradina del paese
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[nord,est,sud,ovest,nordovest]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+cap_porch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.nw
+3
+riverside_path
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\town_lane.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+4
+if:money_found
+	if:bulb_away
+		goto:nursery_front
+	else
+		set:bulb_away
+		put:mrsbulb,$nowhere
+		msg:La signora Bulb esce in fretta, chiude a chiave il vivaio e si allontana lungo la strada. La banda aspetta che se ne vada.
+		waitkey
+		goto:nursery_front
+	endif
+else
+	goto:nursery_front
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+n
+4
+if:ambush_cleared
+	goto:cap_porch
+else
+	msg:La signora Smith e le sue amiche occupano ancora la stradina verso casa di Cap. Decidi di non attirare la loro attenzione.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+w
+4
+if:villa_known
+	goto:phone_booth
+else
+	msg:Non c'è motivo di proseguire in quella direzione.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+s
+4
+if:money_found
+	msg:"Non possiamo andare da Bill adesso, dopo esserci intrufolati nel giardino della villa. Prima dobbiamo capire cosa sta succedendo", dice Red. "E trovare Cap!" aggiunge Peg.
+else
+	goto:bill_office
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Torniamo alla villa. Dobbiamo scoprire cosa nascondono quegli uomini."
+		else
+			msg:Scoop: "Il vivaio è a est. È lì che è stato chiamato Cap."
+		endif
+	endif
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+houses
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:case
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+fences
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:recinti,staccionate
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+gardens
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:giardini
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+grass
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:erba
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+road
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:strada,stradina
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+nursery_front
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Il vivaio dei Bulb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Cesti di bulbi da fiore sono disposti in file ordinate fuori dalle serre. Le etichette promettono splendide fioriture e l'aria profuma di terra umida e piante in crescita. Una robusta porta di legno protegge l'ingresso privato, mentre una fitta siepe delimita il cortile.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+nel cortile del vivaio dei Bulb
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[ovest,est,nord]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.w
+3
+town_lane
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.e
+3
+hedge_watch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+glasshouse
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\nursery_front.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+tracks
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Quasi tutte sono normali impronte di scarponi. Una stretta traccia sembra diversa.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:impronte,tracce,segni,depressioni
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+set:tracks_seen
+msg:Red si china sulle impronte. "Il tacco di uno scarpone e una gamba di legno. Cap è stato qui!"
+if:bulb_denied
+	msg:Scoop guarda verso la signora Bulb. "Allora perché negarlo? Potrebbe essere ancora dentro. Sorvegliamo il cortile di carico senza farci vedere."
+	msg:Un varco dietro la siepe sembra abbastanza ampio da nascondervi tutti e quattro.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+baskets
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+I cesti hanno un'etichetta dipinta: BULB - Bulbi di Prima Qualità.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cesti,bulbi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:"Bei bulbi", dici. "Sono i Bulb che li vendono a preoccuparmi."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+nurserydoor
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Una robusta porta con una piccola serratura. Peg non potrebbe sfondarla senza fare rumore.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:porta,serratura,porta del vivaio
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:nursery_unlocked
+	msg:Red ha sbloccato la serratura. La porta si può aprire.
+else
+	if:bulb_away
+		msg:La signora Bulb ha chiuso a chiave quando se n'è andata. Red studia la piccola serratura.
+	else
+		msg:La signora Bulb tiene la serra privata chiusa ai visitatori.
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+unlock
+6
+if:money_found
+	ifobjin:screwdriver,$inventory
+		if:nursery_unlocked
+			msg:La serratura è già sbloccata.
+		else
+			set:nursery_unlocked
+			msg:Red lavora alla serratura con il cacciavite di Cap. Un leggero scatto premia la sua pazienza.
+		endif
+	else
+		msg:Prima bisogna raccogliere ciò che si vuole usare.
+	endif
+else
+	msg:Scoop ferma Red. "Non mentre lei è qui. Prima scopriamo cosa è successo."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+6
+if:nursery_unlocked
+	msg:La porta si apre. La serra è a nord.
+else
+	msg:L'ingresso è chiuso. Peg indica la serratura. "Serve un lavoro silenzioso, non la forza bruta."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+6
+msg:Peg prova la porta e scuote la testa. "Troppo robusta. Faremmo soltanto scattare l'allarme."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+glasshouses
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:serre
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+labels
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:etichette,etichetta
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hedge
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:siepe
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+nursery
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:vivaio
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+yard
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cortile
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+plants
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:piante
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:screwdriver
+5
+if:money_found
+	ifobjin:screwdriver,$inventory
+		if:nursery_unlocked
+			msg:La serratura è già sbloccata.
+		else
+			set:nursery_unlocked
+			msg:Red lavora alla serratura con il cacciavite di Cap. Un leggero scatto premia la sua pazienza.
+		endif
+	else
+		msg:Prima bisogna raccogliere ciò che si vuole usare.
+	endif
+else
+	msg:Scoop ferma Red. "Non mentre lei è qui. Prima scopriamo cosa è successo."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+n
+4
+if:nursery_unlocked
+	goto:glasshouse
+else
+	msg:La robusta porta sbarra il passaggio.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:nursery_unlocked
+		msg:Scoop: "La porta è sbloccata. Entriamo nella serra a nord."
+	else
+		if:money_found
+			ifobjin:screwdriver,$inventory
+				msg:Red: "Proviamo a lavorare sulla serratura con il cacciavite di Cap."
+			else
+				msg:Red: "Per quella serratura ci servirebbe il cacciavite. Torniamo a prenderlo a casa di Cap."
+			endif
+		else
+			if:gang_reunited
+				msg:Scoop: "Torniamo alla villa. Dobbiamo scoprire cosa nascondono quegli uomini."
+			else
+				if:tracks_seen
+					msg:Scoop: "Cap è stato qui. Nascondiamoci dietro la siepe a est e vediamo cosa succede."
+				else
+					if:bulb_denied
+						msg:Red: "Quelle impronte accanto all'ingresso meritano un'occhiata più attenta."
+					else
+						msg:Scoop: "Chiediamo alla signora Bulb se Cap è arrivato."
+					endif
+				endif
+			endif
+		endif
+	endif
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hedge_watch
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Dietro la siepe del vivaio
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Tra la fitta siepe e i cesti di bulbi accatastati c'è uno spazio stretto e ombroso. Tra le foglie si vede buona parte del cortile di carico. La vegetazione offre un buon nascondiglio, purché nessuno faccia troppo rumore.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+dietro la siepe del vivaio
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[ovest]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.w
+3
+nursery_front
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/nursery_hedge.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hide
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wait
+4
+ifobjin:truck,$available
+	if:truck_seen
+		msg:Gli uomini stanno finendo di parlare alla porta. Il cappello e la cassa ti lasciano pochi dubbi: dovete scoprire dove andrà il camion.
+		msg:Scoop indica il telone sollevato. "Puoi nasconderti là sotto, Jerry. Noi aspetteremo notizie a casa di Cap."
+	else
+		set:truck_seen
+		put:hat,hedge_watch
+		msg:La porta del vivaio si apre. Il conducente e un secondo uomo escono reggendo una lunga cassa di legno. Quello che cammina all'indietro si ferma per riprendere fiato.
+		msg:"Piano, da questa parte", borbotta il conducente. Insieme sollevano la cassa fino al pianale. Quando la inclinano, da sotto il coperchio scivola un cappello.
+		msg:Red ti stringe il braccio. "È quello di Cap!"
+		msg:Gli uomini spingono la cassa sotto il telone, poi tornano alla porta per parlare con la signora Bulb. Il cappello è rimasto vicino ai cesti, a pochi passi dal vostro nascondiglio.
+		msg:Il telone è sollevato da un lato. Scoop lo indica. "Potresti nasconderti là sotto. Se ripartono con Cap, dobbiamo sapere dove lo portano. Noi aspetteremo una tua telefonata a casa sua."
+	endif
+else
+	if:villa_known
+		msg:Il cortile di carico è vuoto. Il camion vi ha condotti alla villa.
+	else
+		if:tracks_seen
+			if:watch_started
+				msg:Gli Strieker fanno troppo rumore. Peg potrebbe allontanarli prima che qualcuno scopra il vostro nascondiglio.
+			else
+				set:watch_started
+				put:striekers,$here
+				msg:Vi accovacciate dietro i cesti. Prima che possiate vedere qualche movimento nel vivaio, arrivano gli Strieker. Parlano a voce alta e minacciano di rivelare il vostro nascondiglio.
+			endif
+		else
+			msg:Scoop abbassa la voce. "Prima cerchiamo un motivo per sospettare del vivaio. Quelle impronte vicino all'ingresso, forse..."
+		endif
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:striekers
+5
+ifobjin:striekers,$available
+	put:striekers,$nowhere
+	put:truck,hedge_watch
+	msg:Peg spinge un pesante cesto nel varco e avanza verso gli Strieker. Quelli indietreggiano, poi se la danno a gambe. Vi rannicchiate di nuovo dietro i cesti.
+	msg:Poco dopo sentite un motore. Un camion entra lentamente nel cortile di carico e si ferma accanto alla porta del vivaio. Il conducente scende dalla cabina e bussa.
+	msg:La porta si socchiude. L'uomo scambia poche parole con qualcuno all'interno, poi spegne il motore.
+	msg:Scoop ti tocca il braccio. "Aspetta. Vediamo cosa sono venuti a caricare."
+else
+	msg:Gli Strieker non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+follow
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:truck
+5
+ifobjin:truck,$available
+	if:truck_seen
+		msg:Gli uomini si voltano per tornare al camion. "Jerry, adesso!" sussurra Scoop.
+		msg:Scatti fuori dal nascondiglio mentre il conducente sale in cabina. Il motore si avvia e il camion comincia a muoversi. Afferri la sponda posteriore, ti issi sul pianale e scivoli sotto il telone senza farti vedere.
+		msg:Tra una piega e l'altra intravedi gli amici che si allontanano dal cortile. Scoop li sta riportando a casa di Cap, ad aspettare la tua telefonata.
+		set:jerry_alone
+		unset:withfriends
+		put:truck,$nowhere
+		put:crate,truck_bed
+		put:peg,cap_interior
+		put:red,cap_interior
+		put:scoop,cap_interior
+		waitkey
+		goto:truck_bed
+	else
+		msg:Scoop ti trattiene per la manica. "Aspetta. Non sappiamo ancora cosa sono venuti a caricare. Osserviamoli."
+	endif
+else
+	msg:Qui non vedi il camion.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+run
+4
+ifobjin:truck,$available
+	if:truck_seen
+		msg:Gli uomini si voltano per tornare al camion. "Jerry, adesso!" sussurra Scoop.
+		msg:Scatti fuori dal nascondiglio mentre il conducente sale in cabina. Il motore si avvia e il camion comincia a muoversi. Afferri la sponda posteriore, ti issi sul pianale e scivoli sotto il telone senza farti vedere.
+		msg:Tra una piega e l'altra intravedi gli amici che si allontanano dal cortile. Scoop li sta riportando a casa di Cap, ad aspettare la tua telefonata.
+		set:jerry_alone
+		unset:withfriends
+		put:truck,$nowhere
+		put:crate,truck_bed
+		put:peg,cap_interior
+		put:red,cap_interior
+		put:scoop,cap_interior
+		waitkey
+		goto:truck_bed
+	else
+		msg:Scoop ti trattiene per la manica. "Aspetta. Non sappiamo ancora cosa sono venuti a caricare. Osserviamoli."
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+w
+4
+ifobjin:truck,$available
+	if:truck_seen
+		msg:Il camion sta per partire con la cassa. Non puoi abbandonare adesso la vostra unica pista.
+	else
+		msg:Scoop ti ferma. "Aspetta, Jerry. Vediamo cosa sono venuti a caricare."
+	endif
+else
+	goto:nursery_front
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Torniamo alla villa. Dobbiamo scoprire cosa nascondono quegli uomini."
+		else
+			if:truck_seen
+				msg:Scoop: "Jerry, segui quel camion! Puoi nasconderti sotto il telone."
+			else
+				ifobjin:truck,$available
+					msg:Scoop: "Il camion è appena arrivato. Osserviamo cosa sono venuti a caricare."
+				else
+					if:watch_started
+						msg:Scoop: "Quegli Strieker ci faranno scoprire. Peg, riesci ad allontanarli senza fare troppo rumore?"
+					else
+						if:tracks_seen
+							msg:Scoop: "Nascondiamoci dietro i cesti e osserviamo il cortile di carico."
+						else
+							msg:Red: "Prima controlliamo le impronte vicino all'ingresso del vivaio."
+						endif
+					endif
+				endif
+			endif
+		endif
+	endif
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hedge
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:siepe
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+baskets
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cesti,bulbi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+leaves
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:foglie
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+loading yard
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cortile,cortile di carico
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+men
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:uomini,tizi,conducente,autista
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+ifobjin:truck,$available
+	if:truck_seen
+		msg:La cassa è sul pianale, sotto il telone. Gli uomini stanno finendo di parlare alla porta del vivaio. Dal vostro nascondiglio potresti raggiungere la sponda posteriore senza passare davanti alla cabina.
+		msg:Scoop sussurra: "Vai, Jerry. Segui quel camion!"
+	else
+		set:truck_seen
+		put:hat,hedge_watch
+		msg:La porta del vivaio si apre. Il conducente e un secondo uomo escono reggendo una lunga cassa di legno. Quello che cammina all'indietro si ferma per riprendere fiato.
+		msg:"Piano, da questa parte", borbotta il conducente. Insieme sollevano la cassa fino al pianale. Quando la inclinano, da sotto il coperchio scivola un cappello.
+		msg:Red ti stringe il braccio. "È quello di Cap!"
+		msg:Gli uomini spingono la cassa sotto il telone, poi tornano alla porta per parlare con la signora Bulb. Il cappello è rimasto vicino ai cesti, a pochi passi dal vostro nascondiglio.
+		msg:Il telone è sollevato da un lato. Scoop lo indica. "Potresti nasconderti là sotto. Se ripartono con Cap, dobbiamo sapere dove lo portano. Noi aspetteremo una tua telefonata a casa sua."
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+vegetation
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:vegetazione
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+truck_bed
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Sotto il telone del camion
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Un pesante telone pende sul pianale di legno del camion. Una grande cassa da trasporto occupa quasi tutto lo spazio angusto, tra corde e pieghe di tela. Il pavimento vibra con il motore e a ogni scossone entra polvere dalle fessure.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+sotto il telone del camion
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/truck_tarpaulin.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+tarpaulin
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Un pesante telone ti nasconde alla vista dalla cabina di guida.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:telone,tela
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:Tieni il telone tra te e gli uomini. Puoi aspettare qui finché non si fermano.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+ropes
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:corde,corda,nodi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+floor
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:pavimento,pianale
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+crate
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:La cassa è abbastanza grande per contenere una persona
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+6
+msg:Tentare di aprirla ora è rischioso. Chi guida potrebbe accorgersi di te.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+truck
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:camion
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+engine
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:engine
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wait
+4
+set:villa_known
+put:crate,$nowhere
+msg:Il camion rallenta davanti a una villa circondata da un alto muro. Mentre gli uomini scendono per aprire il cancello, scivoli dal pianale e ti nascondi dietro un pilastro.
+msg:Il camion entra nella proprietà. Prima che il cancello si richiuda, intravedi i due scaricare la cassa e trascinarla lungo il fianco della villa. 
+msg:Poi gli arbusti li nascondono alla vista.
+msg:Attraverso le sbarre non riesci a vedere il giardino sul retro. A sud, dall'altra parte della strada, c'è una cabina telefonica.
+waitkey
+goto:villa_gate
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hide
+4
+msg:Ti appiattisci sotto il telone e aspetti che il camion si fermi.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+msg:Gli altri aspettano a casa di Cap. Resta nascosto finché il camion non si ferma, poi cerca un modo per avvertirli.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+phone_booth
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Il telefono pubblico
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Un telefono pubblico si trova in una piccola cabina di legno accanto alla strada. La cornetta nera è appesa sopra una mensola consumata, levigata da anni di gomiti e dita impazienti. Un muretto di pietra nasconde in parte la cabina alla proprietà vicina.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+al telefono pubblico
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[est,nord]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.e
+3
+town_lane
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+villa_gate
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/public_telephone.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+telephone
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+La cornetta è intatta. Conosci il numero di telefono di Cap.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:telefono,cornetta
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+call
+6
+ifobjin:coin,$inventory
+	if:villa_known
+		if:gang_reunited
+			msg:La telefonata ha già riunito la banda.
+		else
+			put:coin,$nowhere
+			set:gang_reunited
+			set:withfriends
+			put:peg,villa_gate
+			put:red,villa_gate
+			put:scoop,villa_gate
+			unset:jerry_alone
+			msg:Telefoni a casa di Cap e spieghi agli amici dove ti trovi. "Il camion è entrato in una villa. Il muro è troppo alto per vedere cosa fanno. Venite al cancello, senza farvi notare!"
+			msg:Torni al cancello. Un quarto d'ora dopo Scoop, Peg e Red ti raggiungono. Peg osserva il muro. "Se vuoi dare un'occhiata oltre, posso aiutarti io."
+			waitkey
+			goto:villa_gate
+		endif
+	else
+		msg:Per ora non c'è nessuno che la banda debba chiamare da qui.
+	endif
+else
+	if:gang_reunited
+		msg:La telefonata ha già riunito la banda.
+	else
+		msg:Serve una moneta per usarlo.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:telefona,chiama
+7
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+booth
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cabina,cabina telefonica
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:coin_found
+	msg:È soltanto una cabina telefonica.
+else
+	set:coin_found
+	msg:Per terra, sotto un giornale, c'è una moneta!
+	put:coin,$here
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shelf
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:mensola,ripiano
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wall
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:muro,parete,muretto
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+road
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:strada
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+call
+4
+ifobjin:coin,$inventory
+	if:villa_known
+		if:gang_reunited
+			msg:La telefonata ha già riunito la banda.
+		else
+			put:coin,$nowhere
+			set:gang_reunited
+			set:withfriends
+			put:peg,villa_gate
+			put:red,villa_gate
+			put:scoop,villa_gate
+			unset:jerry_alone
+			msg:Telefoni a casa di Cap e spieghi agli amici dove ti trovi. "Il camion è entrato in una villa. Il muro è troppo alto per vedere cosa fanno. Venite al cancello, senza farvi notare!"
+			msg:Torni al cancello. Un quarto d'ora dopo Scoop, Peg e Red ti raggiungono. Peg osserva il muro. "Se vuoi dare un'occhiata oltre, posso aiutarti io."
+			waitkey
+			goto:villa_gate
+		endif
+	else
+		msg:Per ora non c'è nessuno che la banda debba chiamare da qui.
+	endif
+else
+	if:gang_reunited
+		msg:La telefonata ha già riunito la banda.
+	else
+		msg:Serve una moneta per usarlo.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:telefona,chiama
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+4
+if:jerry_alone
+	msg:Devi telefonare agli altri prima di allontanarti dalla villa.
+else
+	goto:town_lane
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:gang_reunited
+	if:money_found
+		msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+	else
+		if:villa_men_gone
+			msg:Scoop: "Torniamo al cancello a nord: ora possiamo entrare nel giardino."
+		else
+			msg:Scoop: "Torniamo al cancello della villa a nord. Dobbiamo vedere cosa fanno gli uomini."
+		endif
+	endif
+else
+	ifobjin:coin,$inventory
+		msg:Hai una moneta e conosci il numero di Cap. Telefona agli amici per dire loro dove sei.
+	else
+		if:coin_found
+			msg:La moneta è per terra nella cabina. Raccoglila per telefonare agli amici.
+		else
+			msg:Gli altri aspettano la tua telefonata. Controlla se nella cabina c'è qualcosa che possa esserti utile.
+		endif
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+villa_gate
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Il cancello della villa
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Un cancello di ferro si alza tra solidi pilastri di pietra, con una piccola targhetta d'ottone fissata accanto. Oltre le sbarre, arbusti ben curati nascondono in parte un'elegante villa. L'alto muro di cinta dà alla proprietà un'aria riservata, quasi ostile.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+davanti al cancello della villa
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[sud,nord]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.s
+3
+phone_booth
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\villa_gate.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+nameplate
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Una piccola targhetta d'ottone accanto al cancello.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:targhetta,nome,targa
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:Pulisci la targhetta d'ottone: "SIGNOR BULB". Lo stesso cognome della proprietaria del vivaio. La destinazione della cassa sembra sempre meno casuale.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+gate
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cancello
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+pillars
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:pilastri
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bars
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sbarre
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shrubs
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:arbusti
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+villa
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:villa
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wall
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:muro,parete,muretto
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:villa_men_gone
+	msg:Ora che gli uomini se ne sono andati, non serve più affacciarsi dal muro. Il varco vicino al cancello permette di entrare in giardino.
+else
+	if:crate_buried
+		msg:Sai dove hanno sepolto la cassa. Ora devi soltanto accertarti che gli uomini se ne vadano.
+	else
+		if:gang_reunited
+			msg:Peg intreccia le mani e si piazza contro il muro. "Un piede qui, Jerry. Ti sollevo io. Red e Scoop faranno da palo."
+		else
+			msg:Il muro è troppo alto e liscio per scalarlo da solo. Se qualcuno ti sollevasse, potresti raggiungere il bordo e guardare nel giardino. Gli altri aspettano tue notizie a casa di Cap; a sud c'è un telefono pubblico.
+		endif
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+climb
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+6
+if:gang_reunited
+	if:villa_men_gone
+		msg:Non serve più arrampicarsi: gli uomini sono andati via e potete entrare dal varco vicino al cancello.
+	else
+		if:crate_buried
+			msg:Hai visto dove hanno sepolto la cassa. Meglio restare nascosti e aspettare che se ne vadano.
+		else
+			msg:Peg intreccia le mani e ti solleva. Raggiungi il bordo del muro e ti affacci quanto basta per guardare, mentre Red e Scoop fanno da palo.
+			msg:Vicino al capanno, i due uomini stanno finendo di scavare una fossa. La cassa è accanto a loro. "Qui nessuno verrà a cercarla", dice quello col berretto.
+			msg:La calano nella buca e cominciano a ricoprirla. Ti si stringe lo stomaco: e se Cap fosse davvero là dentro?
+			msg:Peg ti tira piano per una scarpa. "Che succede lassù?" Ti lasci scivolare giù e racconti quello che hai visto.
+			msg:Scoop ti trattiene. "Aspetta. Prima devono andarsene."
+			set:crate_buried
+			put:crate,$nowhere
+		endif
+	endif
+else
+	msg:Provi ad aggrapparti al muro, ma non riesci a raggiungere il bordo. Da solo non ce la fai. Ti serve l'aiuto degli amici.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wait
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hide
+4
+if:villa_men_gone
+	msg:Il camion è andato via. Peg indica un varco vicino al cancello: potete entrare e controllare la cassa.
+else
+	if:crate_buried
+		msg:Restate nascosti accanto al cancello. Poco dopo il motore si avvia: i due uomini escono con il camion e si allontanano lungo la strada.
+		msg:Aspettate che il rumore svanisca. Peg indica un varco vicino al cancello. "Adesso."
+		set:villa_men_gone
+	else
+		msg:Da oltre il muro arriva un colpo metallico, seguito da un raschiare ritmico nella terra. Gli arbusti nascondono il giardino sul retro: dal cancello non riesci a vedere cosa stanno facendo.
+		if:gang_reunited
+			msg:Peg guarda il bordo del muro. "Posso sollevarti. Dai un'occhiata, ma senza farti vedere."
+		else
+			msg:Da solo non riesci ad affacciarti oltre il muro. Dovresti avvertire gli amici: il telefono pubblico è a sud.
+		endif
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+n
+4
+if:villa_men_gone
+	goto:villa_garden
+else
+	if:crate_buried
+		msg:Gli uomini sono ancora nella proprietà. Meglio restare nascosti finché non saranno ripartiti.
+	else
+		if:gang_reunited
+			msg:Non sapete dove siano gli uomini. Prima di entrare, potresti farti aiutare da Peg a guardare oltre il muro.
+		else
+			msg:Non è prudente entrare da solo. Prima avverti gli amici usando il telefono pubblico a sud.
+		endif
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:gang_reunited
+	if:money_found
+		msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+	else
+		if:villa_men_gone
+			msg:Peg: "Gli uomini se ne sono andati. Passiamo dal varco ed entriamo in giardino."
+		else
+			if:crate_buried
+				msg:Scoop: "Ora sappiamo dove si trova la cassa, ma gli uomini sono ancora dentro. Aspettiamo che ripartano."
+			else
+				msg:Peg: "Il muro è troppo alto per guardare da terra. Posso sollevarti: prova a scalarlo."
+			endif
+		endif
+	endif
+else
+	msg:Gli altri aspettano tue notizie. Il camion è entrato qui: vai al telefono pubblico a sud e chiamali.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+villa_garden
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Il giardino della villa
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Fitti arbusti riparano un angolo appartato del giardino della villa. Un piccolo capanno degli attrezzi è addossato al muro di cinta, con attrezzi da giardinaggio lasciati lì vicino. Tra le aiuole ordinate, una chiazza di terra smossa appare vistosamente recente.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+nel giardino della villa
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[sud]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.s
+3
+villa_gate
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\villa_garden.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+earth
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+La terra smossa segna il punto in cui gli uomini hanno sepolto la cassa.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:terra,terreno,suolo,terra smossa
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+dig
+6
+ifobjin:spade,$inventory
+	if:crate_dug
+		msg:La cassa è già stata disseppellita.
+	else
+		put:crate,$here
+		set:crate_dug
+		msg:Peg prende la vanga e sposta la terra. La cassa sospetta riemerge intatta. Il coperchio si può aprire.
+	endif
+else
+	msg:Peg potrebbe scavare in fretta con la vanga accanto al capanno degli attrezzi.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:scava
+7
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+toolshed
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Una vanga è stata lasciata fuori dal piccolo capanno degli attrezzi.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:capanno,capanno degli attrezzi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wall
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:muro,parete,muretto
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shrubs
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:arbusti
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+villa
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+garden
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:giardino
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+equipment
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:attrezzi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:spade
+5
+ifobjin:spade,$inventory
+	if:crate_dug
+		msg:La cassa è già stata disseppellita.
+	else
+		put:crate,$here
+		set:crate_dug
+		msg:Peg prende la vanga e sposta la terra. La cassa sospetta riemerge intatta. Il coperchio si può aprire.
+	endif
+else
+	msg:Peg potrebbe scavare in fretta con la vanga accanto al capanno degli attrezzi.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+s
+4
+if:money_found
+	goto:villa_gate
+else
+	msg:Scoop vuole esaminare la cassa sepolta prima che la banda lasci il suo nascondiglio.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Torniamo al vivaio. È lì che dobbiamo cercare Cap."
+	else
+		if:crate_dug
+			msg:Scoop: "Ora possiamo aprire la cassa e vedere cosa contiene."
+		else
+			ifobjin:spade,$inventory
+				msg:Peg: "Con la vanga posso scavare dove la terra è stata smossa."
+			else
+				msg:Peg: "Quella vanga vicino al capanno ci aiuterà a scavare."
+			endif
+		endif
+	endif
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+glasshouse
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:La serra del vivaio
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Una luce calda filtra dal tetto di vetro sulle file ordinate di vasi e bulbi. Goccioline d'umidità coprono alcuni vetri e l'aria è impregnata dell'odore di terra bagnata. Sotto si avverte un altro odore, leggermente acido e meno facile da spiegare.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+nella serra del vivaio
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[sud,nord]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.s
+3
+nursery_front
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+potting_room
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/nursery_glasshouse.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+roof
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:tetto
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+glass
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:vetro
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+panes
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:vetri
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+pots
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:vasi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bulbs
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:bulbi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+glasshouse
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:serra
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	msg:Scoop: "Continuiamo a cercare. La stanza dei rinvasi è a nord."
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+potting_room
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:La stanza dei rinvasi
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Un velo di terra copre la superficie di un pesante banco di quercia per i rinvasi. Vasi di terracotta, scatole di bulbi e materiali da giardinaggio affollano un robusto scaffale di legno; poco lontano sono appoggiate alcune assi. La luce di una piccola finestra laterale lascia in ombra gli angoli della stanza.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+nella stanza dei rinvasi del vivaio
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[sud,est]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.s
+3
+glasshouse
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.e
+3
+hidden_room
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\potting_room.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shelf
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Un pesante scaffale pieno di scatole di bulbi.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:scaffale,scaffali,scatole
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:shelf_moved
+	msg:Lo scaffale è spostato di lato e rivela il passaggio nascosto.
+else
+	set:marks_seen
+	msg:Red nota graffi curvi e recenti ai piedi dello scaffale. "Si sposta! Quelle scatole servono a nascondere qualcosa."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+move
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+6
+if:marks_seen
+	if:shelf_moved
+		msg:Lo scaffale è già spostato.
+	else
+		set:shelf_moved
+		put:cap,hidden_room
+		msg:Red trova un piccolo fermo; Peg sgancia lo scaffale dalla parete e lo fa ruotare. 
+		msg:A est si apre un passaggio nascosto. Da dentro arriva la voce soffocata di Cap.
+	endif
+else
+	msg:Peg prova a muovere lo scaffale. È fissato alla parete; Red dovrebbe prima esaminarlo.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bench
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Un pesante banco di quercia per i rinvasi, vicino alla porta della serra.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:banco,tavolo,banco da rinvaso
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+move
+6
+if:danger
+	if:bench_set
+		msg:Peg ha già spinto il banco contro la porta.
+	else
+		set:bench_set
+		msg:Peg spinge il banco di quercia contro la porta della serra. Rallenterà un aggressore, ma le assi potrebbero puntellarlo.
+	endif
+else
+	msg:"Perché?" chiede Peg.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+window
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Una piccola finestra laterale dà sulla stradina.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:finestra,finestra laterale
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:danger
+	if:window_opened
+		msg:Puoi passare di lì e correre da Bill. Cap non riesce certo ad arrampicarsi, e il resto della banda deve proteggerlo.
+	else
+		msg:La finestra è bloccata. Qualcosa di pesante potrebbe rompere il vetro; una volta liberata l'apertura, riusciresti a passarci.
+	endif
+else
+	msg:La finestra laterale dà sulla stradina.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+6
+if:danger
+	if:help_called
+		msg:Bill è stato avvertito. Tu e i tuoi amici dovete resistere nella stanza finché non riuscirà a fermare il signor Bulb.
+	else
+		if:boards_set		
+			if:window_opened
+				set:jerry_away
+				unset:withfriends
+				set:jerry_alone
+				msg:Passi dalla finestra laterale e corri da Bill Hadley. Scoop, Peg e Red restano con Cap mentre vai a chiedere aiuto.
+				waitkey
+				goto:bill_office
+			else
+				msg:Provi a uscire dalla finestra laterale, ma è bloccata.
+			endif
+		else
+			msg:Non vuoi lasciare i tuoi amici prima che abbiano trovato un modo per rallentare gli aggressori.
+		endif
+	endif
+else
+	msg:Per fare cosa?
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+unlock
+6
+if:window_opened
+	msg:La finestra è già rotta.
+else
+	msg:La finestra è bloccata e non riesci ad aprirla.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+pots
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:vasi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+supplies
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:materiali,materiali da giardinaggio
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+4
+if:shelf_moved
+	goto:hidden_room
+else
+	msg:Lo scaffale blocca la parete a est.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+run
+4
+if:danger
+	if:help_called
+		msg:Bill è stato avvertito. Tu e i tuoi amici dovete resistere nella stanza finché non riuscirà a fermare il signor Bulb.
+	else
+		if:boards_set		
+			if:window_opened
+				set:jerry_away
+				unset:withfriends
+				set:jerry_alone
+				msg:Passi dalla finestra laterale e corri da Bill Hadley. Scoop, Peg e Red restano con Cap mentre vai a chiedere aiuto.
+				waitkey
+				goto:bill_office
+			else
+				msg:Provi a uscire dalla finestra laterale, ma è bloccata.
+			endif
+		else
+			msg:Non vuoi lasciare i tuoi amici prima che abbiano trovato un modo per rallentare gli aggressori.
+		endif
+	endif
+else
+	msg:Per fare cosa?
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+s
+4
+if:danger
+	msg:Fuori si avvicinano passi pesanti. La banda deve proteggere Cap qui; puoi usare la finestra laterale.
+else
+	goto:glasshouse
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wait
+4
+if:danger
+	if:help_called
+		if:bench_set
+			if:boards_set
+				msg:Il signor Bulb si scaglia contro la porta. Peg tiene fermo il banco; i puntelli di Red reggono. Scoop tiene Cap al riparo. Fuori, Bill grida un ordine. Sono arrivati i soccorsi!
+				waitkey
+				goto:_end
+			else
+				addvar:pressure,1
+				msg:Il banco si sposta sotto un colpo. Red indica le assi: "Puntelliamolo!"
+				if:pressure>2
+					waitkey
+					goto:_caught
+				endif
+			endif
+		else
+			addvar:pressure,1
+			msg:Il signor Bulb è alla porta della serra. Peg deve spostare il banco prima che la porta ceda.
+			if:pressure>2
+				waitkey
+				goto:_caught
+			endif
+		endif
+	else
+		msg:Scoop impedisce alla banda di restare in attesa. "Jerry, prima devi chiamare Bill. Usa la finestra laterale!"
+	endif
+else
+	msg:I ragazzi si fermano ad ascoltare. Non si muove nulla.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:danger
+		if:bench_set
+			if:boards_set
+				if:window_opened
+					msg:Scoop: "La barricata è pronta e la finestra è libera. Jerry, corri a chiamare Bill!"
+				else
+					ifobjin:chair,$inventory
+						msg:Peg: "Prova a rompere il vetro della finestra con la sedia."
+					else
+						msg:Red: "La finestra è bloccata. La sedia nella stanza dietro lo scaffale potrebbe aiutarci a rompere il vetro."
+					endif
+				endif
+			else
+				ifobjin:boards,$inventory
+					msg:Red: "Usiamo le assi per puntellare il banco."
+				else
+					msg:Red: "Raccogli quelle assi. Serviranno a puntellare il banco."
+				endif
+			endif
+		else
+			msg:Peg: "Posso spostare il banco contro la porta. Poi lo puntelleremo."
+		endif
+	else
+		if:shelf_moved
+			msg:Scoop: "Passiamo dall'apertura a est. Cap potrebbe essere là dentro."
+		else
+			if:marks_seen
+				msg:Red: "Forse lo scaffale si può spostare. Peg potrebbe provare."
+			else
+				msg:Red: "Diamo un'occhiata più attenta a quello scaffale."
+			endif
+		endif
+	endif
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+potting_room_finale
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:La stanza dei rinvasi
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Un velo di terra copre la superficie di un pesante banco di quercia per i rinvasi. Vasi di terracotta, scatole di bulbi e materiali da giardinaggio affollano un robusto scaffale di legno; poco lontano sono appoggiate alcune assi. La luce di una piccola finestra laterale lascia in ombra gli angoli della stanza.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+nella stanza dei rinvasi del vivaio
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\potting_room.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:Il signor Bulb si scaglia contro la porta. Peg tiene fermo il banco; i puntelli di Red reggono. Scoop tiene Cap al riparo.
+msg:Fuori, Bill grida un ordine. Sono arrivati i soccorsi!
+waitkey
+goto:_end
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hidden_room
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Dietro lo scaffale
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Tubi di rame serpeggiano tra barili e un alambicco clandestino, nascosti dietro l'attività rispettabile del vivaio. Casse di bulbi celano bottiglie e libri contabili. Una semplice sedia di legno si trova tra le attrezzature e nell'aria calda aleggia un odore pungente e acido.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+nella distilleria nascosta dietro lo scaffale
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[ovest]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.w
+3
+potting_room
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/hidden_still.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+still
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Tubi, tini di fermentazione e bottiglie nascoste occupano uno spazio che i clienti del vivaio non vedono mai.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:alambicco,distilleria,tubi,bottiglie,tini
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:Red segue i tubi dall'impianto di irrigazione fino a un alambicco clandestino. Le scatole di bulbi nascondono bottiglie; il vivaio è una copertura.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+ropes
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Le corde legano i polsi di Cap.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:corde,corda,nodi
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+untie
+6
+ifobjin:cap,$available
+	if:cap_free
+		msg:Cap è già libero.
+	else
+		set:cap_free
+		set:danger
+		put:cap,potting_room
+		msg:Red scioglie i nodi mentre Peg sorregge Cap. "Una distilleria clandestina!" ansima Cap. "L'ho scoperta mentre riparavo l'impianto di irrigazione. La signora Bulb è andata a chiamare suo marito. Se riesce a entrare, mi ucciderà."
+		msg:Scoop accompagna Cap nella stanza dei rinvasi. "Jerry deve andare a chiamare Bill. Noi puntelleremo la porta."
+		waitkey
+		goto:potting_room
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:cap_free
+	msg:Le corde che legavano Cap ora sono sul pavimento.
+else
+	msg:Le corde legano i polsi di Cap.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+barrels
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:barili,botti
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+crates
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:casse
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+books
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:libri,libri contabili
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+chair
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sedia
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:cap_free
+		ifobjin:chair,$inventory
+			msg:Scoop: "Torniamo da Cap nella stanza dei rinvasi."
+		else
+			if:window_opened
+				msg:Scoop: "La finestra è già libera. Torniamo da Cap nella stanza dei rinvasi."
+			else
+				msg:Red: "Prendiamo la sedia, poi torniamo da Cap. Potrebbe servirci con la finestra bloccata."
+			endif
+		endif
+	else
+		msg:Peg: "Cap è legato! Liberiamolo, prima di tutto."
+	endif
+else
+	msg:I tuoi amici non sono qui.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bill_office
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:L'ufficio di Bill Hadley
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+L'ufficio di Bill Hadley è semplice e pratico. Fogli in pile ordinate occupano una solida scrivania, accanto a un telefono nero. Uno schedario si trova in un angolo e la luce dalla finestra sulla strada dà alla stanza un'aria rassicurantemente ordinaria.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+nell'ufficio di Bill Hadley
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[nord]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+town_lane
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\bill_office.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+n
+4
+if:jerry_alone
+	msg:Prima di andartene devi raccontare a Bill cosa è successo.
+else
+	goto:town_lane
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:jerry_away
+	msg:I tuoi amici stanno proteggendo Cap al vivaio. Racconta subito a Bill cosa sta succedendo.
+else
+	if:withfriends
+		if:note_read
+			msg:Scoop: "Per chiedere aiuto a Bill ci serve qualcosa di più di un appuntamento mancato. Cerchiamo Cap al vivaio."
+		else
+			msg:Scoop: "Prima andiamo da Cap: ci aveva promesso un lavoro."
+		endif
+	else
+		msg:I tuoi amici non sono qui.
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:scrivania
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+papers
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:fogli,carte
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+telephone
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:telefono,cornetta
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+cabinet
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:schedario
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+window
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:finestra,finestra laterale
+5
+<end node> 5P9i0s8y19Z

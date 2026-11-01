@@ -1,0 +1,5415 @@
+<Treepad version 3.0>
+dt=Text
+<node>
+main
+0
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+config
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:JerryToddBulbs
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+title:Jerry Todd and the Killer Bulbs
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+author:Gianluca Gemelli+Marco Giorgini
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+engine:StoryTllrC64
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+version:0.9.0
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+binary:yes
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+model:C64
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+build
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bitvars_check:1
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+emit_texts:1
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+_string_checksimilarity:1
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+localization
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+and:and
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+include:stdlib_en.hjt
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+genericverb
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wait
+2
+msg:The boys listen for a moment. Nothing changes.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:wait,z
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+run
+2
+msg:You're ready, but there's no need to sprint here.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:run
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+untie
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:untie,free,release
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:shoot,fire,sling
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+throw
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:throw,hurl,toss
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hide
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:hide
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+follow
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:follow,chase
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+climb
+2
+msg:There's nothing worth climbing here.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:climb,climb up,climb over
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onenter
+2
+clear
+ifundef:$room.shortdesc
+	msg:You are in +
+	msg:$roomname
+else
+	msg:You are +
+	msg:$room.shortdesc
+endif
+msg:.
+ifundef:$room.exits
+	msg:There are no evident exits.
+else
+	msg:There are clear exits to +
+	msg:$room.exits
+	msg:.
+endif
+ifobjinattr:$any,$here,visible+listable
+	msg:You see: +
+	listobjin:$here,visible+listable
+endif
+if:withfriends
+	ifisin:peg,$here
+	else
+		msg:Peg, Red and Scoop catch up with you.
+	endif
+	put:peg,$here
+	put:red,$here
+	put:scoop,$here
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+2
+clear
+msg:$roomdesc
+ifdef:$room.exits	
+	msg:There are clear exits to +
+	msg:$room.exits
+	msg:.
+endif
+ifobjinattr:$any,$here,visible+listable
+	msg:You see: +
+	listobjin:$here,visible+listable
+endif
+if:withfriends
+	ifisin:peg,$here
+	else
+		msg:Peg, Red and Scoop catch up with you.
+	endif
+	put:peg,$here
+	put:red,$here
+	put:scoop,$here
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+actor
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bill
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Bill Hadley
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Bill listens carefully before acting.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:bill_office
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:bill,hadley,bill hadley
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:bill,$available
+	if:danger
+		msg:You tell Bill about Cap, the still and the threatened attack. Bill rises at once. "Get help? We're going now!"
+		msg:You and Bill race back to the nursery. Bill circles round to intercept Mr Bulb while you rejoin your friends in the potting room.
+		set:help_called
+		unset:jerry_away
+		set:withfriends
+		put:bill,potting_room
+		unset:jerry_alone
+		waitkey
+		goto:potting_room_finale
+	else
+		if:note_read
+			msg:Bill listens, but a missed appointment is not proof of a crime. "Find out where Cap went, and tell me if he is in trouble."
+		else
+			msg:Bill greets the gang. "Off to help Cap today?"
+		endif
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+cap
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Cap Tinkertop
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Cap Tinkertop, the gang's old friend.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cap,captain,tinkertop
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:cap,$available
+	if:cap_free
+		msg:Cap is shaken but can walk with help.
+	else
+		msg:Cap's wrists are tied behind him. He is alive and urgently needs freeing.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:cap,$available
+	if:cap_free
+		msg:"Mrs Bulb has gone for her husband," Cap says. "He means to silence me. Get Bill, and keep that door shut!"
+	else
+		msg:Cap can only make a muffled sound. The ropes must come off first.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+untie
+4
+ifobjin:cap,$available
+	if:cap_free
+		msg:Cap is already free.
+	else
+		set:cap_free
+		set:danger
+		put:cap,potting_room
+		msg:Red loosens the knots while Peg steadies Cap. "An illicit still!" Cap gasps. "I found it while fixing the irrigation. Mrs Bulb has gone for her husband. He will kill me if he gets in."
+		msg:Scoop leads Cap into the potting room. "Jerry must fetch Bill. The rest of us will brace the door."
+		waitkey
+		goto:potting_room
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+mrsbulb
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Mrs Bulb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Mrs Bulb guards the entrance to her nursery.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:nursery_front
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:mrsbulb,mrs bulb,miss bulb,mrs
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:mrsbulb,$available
+	if:tracks_seen
+		set:bulb_denied
+		msg:Scoop asks about the wooden-leg marks. Mrs Bulb stiffens. "Old marks. He has not been here today. Now leave my yard."
+	else
+		msg:Scoop asks for Cap. "I asked him to mend the irrigation," says Mrs Bulb, "but he never arrived."
+		ifnot:bulb_denied
+			set:bulb_denied
+			msg:As Mrs Bulb turns away, you notice several footprints in the soft earth beside the entrance.
+			msg:Among the boot marks, you notice a series of small, round impressions.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+peg
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Peg
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:red_barn
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Peg is the biggest and strongest of your friends. His broad shoulders and steady good humour make him a reassuring companion. He would rather lend a hand than make a speech.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:peg
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:peg,$available
+	ifisroom:red_barn
+	else
+		ifisroom:riverside_path
+			if:nest_seen
+				msg:"There are too many of them for a quiet scuffle," Peg whispers. "We need a better idea."
+			else
+				msg:Peg keeps his voice low. "Look at the bushes before we go any closer."
+			endif
+		else
+			msg:Peg stays close to you, watching for anything that might help.
+		endif
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+red
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Red
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:red_barn
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Red's red hair is usually easier to spot than his latest invention. He notices loose screws, hidden catches and things that might be made useful. The broken tomato launcher was one of his recent projects.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:red
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:red,$available
+	ifisroom:red_barn
+	else
+		ifisroom:riverside_path
+			if:nest_seen
+				msg:"The launcher is broken, but its rubber band is still good," Red whispers. "With a stone, it could bring that nest down."
+			else
+				msg:Red keeps his voice low. "Look at the bushes before we go any closer."
+			endif
+		else
+			msg:Red stays close to you, watching for anything that might help.
+		endif
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scoop
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Scoop
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:red_barn
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Scoop has a quick tongue and a head full of plans. He likes to ask the questions and put the clues together, although his confidence sometimes gets the whole gang into trouble.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:scoop
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifobjin:scoop,$available
+	ifisroom:red_barn
+	else
+		ifisroom:riverside_path
+			if:nest_seen
+				msg:"They are watching the path, not the branches above them," Scoop whispers.
+			else
+				msg:Scoop keeps his voice low. "Look at the bushes before we go any closer."
+			endif
+		else
+			msg:Scoop stays close to you, watching for anything that might help.
+		endif
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+striekers
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:the Strieker boys
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+The Strieker boys are the gang's persistent rivals, always ready with a taunt or an ambush.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:riverside_path
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:striekers,strieker,strieker boys,strikers,striker,strickers,boys
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+ifisroom:riverside_path
+	if:ambush_cleared
+		msg:The Striekers have gone.
+	else
+		msg:You keep quiet. Calling out would give the gang away before you even have a plan.
+	endif
+else
+	ifobjin:striekers,$available
+		msg:Scoop asks them to lower their voices. They only laugh. Peg plants himself between them and the hiding place.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+4
+ifisroom:riverside_path
+	if:ambush_cleared
+		msg:The Striekers have gone.
+	else
+		msg:You can't get close without walking straight into the ambush. You should examine the bushes.
+	endif
+else
+	ifobjin:striekers,$available
+		put:striekers,$nowhere
+		set:truck_seen
+		put:truck,hedge_watch
+		msg:Peg shoulders a heavy basket into the gap and advances on the Striekers. They back away, then turn and run. You all crouch behind the baskets again.
+		msg:A little later, you hear an engine. A truck rolls slowly into the loading yard and stops beside the nursery door. The driver climbs out of the cab and knocks.
+		msg:The door opens a crack. The man exchanges a few words with someone inside, then switches off the engine.
+		msg:Scoop touches your arm. "Wait. Let's see what they've come to collect."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:striekers,$available
+	ifisroom:riverside_path
+		msg:The Striekers are crouching in the bushes ahead, watching the path. Your friends keep out of sight. A direct approach would take you straight into their ambush.
+	else
+		msg:The Striekers block the gap between the baskets and deliberately raise their voices. If they keep this up, someone from the nursery will come to investigate.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+normalobj
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+boards
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:some loose boards
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Short boards stout enough to brace furniture against a door.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:potting_room
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:boards,board,planks,plank,braces
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Scoop suggests keeping them until this business is settled.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+ifobjin:$this,$available
+	ifisroom:potting_room
+		if:boards_set
+			msg:The boards are already wedged in place.
+		else
+			if:danger
+				ifobjin:boards,$inventory
+					if:bench_set
+						if:boards_set
+							msg:The boards are already wedged in place.
+						else
+							set:boards_set
+							put:boards,$here
+							msg:Red wedges the boards between bench and wall. Scoop tests the brace; this should hold until help arrives.
+						endif
+					else
+						msg:Peg needs to put the bench against the door first.
+					endif
+				else
+					msg:Someone needs to pick that up first.
+				endif
+			else
+				msg:The boards may be useful later.
+			endif
+		endif
+	else
+		msg:The boards are needed back in the potting room.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+chair
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:chair
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:a chair
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+ifobjin:$this,$available
+	ifisroom:potting_room
+		msg:You smash the chair against the window. The glass shatters and the chair splinters.
+		set:window_opened
+		put:chair,$nowhere
+	else
+		msg:You don't want to sit down now.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:chair,$inventory
+	msg:It's a solid wooden chair.
+else
+	ifnot:window_opened
+		ifisroom:hidden_room
+			if:cap_free
+				msg:It's a solid wooden chair.
+			else
+				msg:It's a solid wooden chair, and Cap's on it
+			endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+take
+4
+ifobjin:chair,$inventory
+	msg:You already have it.
+else
+	ifisroom:hidden_room
+		if:cap_free
+			if:window_opened
+				msg:You don't see another one here.
+			else
+				put:chair,$inventory
+				msg:Done.
+			endif
+		else
+			msg:Cap is still sitting on it!
+		endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+coin
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:coin
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:a coin
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+elastic
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:a thick rubber band
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:elastic,rubber band,rubber,band,slingshot
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr:visible+takeable
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+A strong rubber band from Red's broken tomato launcher. Stretched between your fingers, it could send a small stone flying.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+take
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+move
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+untie
+4
+ifobjin:elastic,$inventory
+	msg:You already have the rubber band.
+else
+	ifisroom:red_barn_yard
+		if:elastic_removed
+			msg:You've already removed the rubber band.
+		else
+			if:nest_seen
+				set:elastic_removed
+				put:elastic,$inventory
+				msg:You unhook the rubber band from the broken frame. Red stretches it carefully. "With a stone, that'll do for our target."
+			else
+				msg:You leave the band attached. There's no reason to dismantle Red's invention yet.
+			endif
+		endif
+	else
+		msg:The rubber band is back at the broken launcher in the farm courtyard.
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+throw
+4
+ifobjin:$this,$available
+	ifisroom:riverside_path
+		if:ambush_cleared
+			msg:The Striekers have gone. You leave the wasps alone.
+		else
+			if:nest_seen
+				ifobjin:elastic,$inventory
+					ifobjin:stone,$inventory
+						set:ambush_cleared
+						put:stone,$nowhere
+						put:striekers,$nowhere
+						msg:You stretch the rubber band, fit the stone and aim at the branch above the Striekers. The shot clips the nest loose. It drops into the bushes; a furious buzzing sends the boys running across the fields.
+						msg:You and your friends keep well clear of the wasps and hurry along the stream to the town lane. Mrs Smith and her friends have gone too; both routes to Cap's house are clear now.
+						waitkey
+						goto:town_lane
+					else
+						msg:You have the rubber band, but you need a small stone. Smooth stones lie along the stream bank.
+					endif
+				else
+					msg:A hand-thrown stone would be too uncertain. Red remembers the sound rubber band on the broken tomato launcher in the farm courtyard.
+				endif
+			else
+				msg:You need a safe target. You should examine the bushes and branches before trying anything.
+			endif
+		endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:You keep the useful rubber band in your pocket.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hat
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Cap's hat
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Cap's old hat, with the familiar patch inside the brim.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:hat,cap hat
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Scoop suggests keeping it until this business is settled.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:hat,$available
+	msg:You check the patch. "That's Cap's hat, all right."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+screwdriver
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:screwdriver
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:a screwdriver
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+A plain screwdriver from Cap's toolbox. Cap asked the boys to bring it for today's jobs.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:cap_interior
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Scoop suggests keeping it until this business is settled.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+spade
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:a garden spade
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+A sound spade left by the toolshed.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:villa_garden
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:spade,shovel
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Scoop suggests keeping it until this business is settled.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sparekey
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Cap's spare key
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+A small brass key to Cap's front door.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:key,spare key
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+4
+ifobjin:$this,$available
+	msg:Red keeps Cap's key safe until they can return it.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+stone
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:a smooth stone
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:stone,rock,pebble,small stone,stones,rocks,pebbles
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:riverside_path
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+A small smooth stone from the stream bank, just the right size for a makeshift slingshot.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+throw
+4
+ifobjin:$this,$available
+	ifisroom:riverside_path
+		if:ambush_cleared
+			msg:The Striekers have gone. You leave the wasps alone.
+		else
+			if:nest_seen
+				ifobjin:elastic,$inventory
+					ifobjin:stone,$inventory
+						set:ambush_cleared
+						put:stone,$nowhere
+						put:striekers,$nowhere
+						msg:You stretch the rubber band, fit the stone and aim at the branch above the Striekers. The shot clips the nest loose. It drops into the bushes; a furious buzzing sends the boys running across the fields.
+						msg:You and your friends keep well clear of the wasps and hurry along the stream to the town lane. Mrs Smith and her friends have gone too; both routes to Cap's house are clear now.
+						waitkey
+						goto:town_lane
+					else
+						msg:You have the rubber band, but you need a small stone. Smooth stones lie along the stream bank.
+					endif
+				else
+					msg:A hand-thrown stone would be too uncertain. Red remembers the sound rubber band on the broken tomato launcher in the farm courtyard.
+				endif
+			else
+				msg:You need a safe target. You should examine the bushes and branches before trying anything.
+			endif
+		endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sceneryobj
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+truck
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:truck,lorry
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:a truck
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+A truck with a low tailboard.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:truck,$available
+	if:truck_seen
+		msg:The crate is on the truck bed, beneath the tarpaulin. The men are finishing their conversation at the nursery door. From your hiding place, you could reach the tailboard without passing in front of the cab.
+		msg:Scoop whispers, "Go on, Jerry. Follow that truck!"
+	else
+		set:truck_seen
+		put:hat,hedge_watch
+		msg:The nursery door opens. The driver and a second man emerge carrying a long wooden crate. The one walking backwards stops to catch his breath.
+		msg:"Easy, this way," the driver mutters. Together they lift the crate onto the truck bed. As they tilt it, a hat slips out from under the lid.
+		msg:Red grips your arm. "That's Cap's!"
+		msg:The men push the crate under the tarpaulin, then return to the door to speak to Mrs Bulb. The hat lies beside the baskets, only a few steps from your hiding place.
+		msg:The tarpaulin is raised on one side. Scoop points to it. "You could hide under there. If they're taking Cap away, we need to know where. We'll wait for your call at his house."
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+climb
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+enter
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+ifobjin:truck,$available
+	if:truck_seen
+		msg:The men turn to head back to the truck. "Jerry, now!" Scoop whispers.
+		msg:You dash out of hiding as the driver climbs into the cab. The engine starts and the truck begins to move. You grab the tailboard, haul yourself onto the bed and slip beneath the tarpaulin unseen.
+		msg:Through a fold in the canvas, you glimpse your friends leaving the yard. Scoop is taking them back to Cap's house to wait for your call.
+		set:jerry_alone
+		unset:withfriends
+		put:truck,$nowhere
+		put:crate,truck_bed
+		put:peg,cap_interior
+		put:red,cap_interior
+		put:scoop,cap_interior
+		waitkey
+		goto:truck_bed
+	else
+		msg:Scoop catches your sleeve. "Wait. We don't know what they've come to collect yet. Let's watch."
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+crate
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:a wooden crate
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+A bulky wooden crate with a nailed lid.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:$nowhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:crate,box,lid
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:$this,$available
+	if:crate_dug
+		msg:The lid is loose now. The gang can open it.
+	else
+		msg:A heavy lid hides the contents. There is no safe way to open it here.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+4
+ifobjin:$this,$available
+	if:crate_dug
+		if:money_found
+			msg:The bundles of banknotes are still inside. The gang leaves the evidence alone.
+		else
+			set:money_found
+			msg:Peg lifts the lid. Not Cap, but bundles of banknotes!
+			msg:Scoop checks the BULB label on the crate.
+			msg:"That hat fooled us. Cap must still be at the nursery. These men are hiding their takings."
+		endif
+	else
+		msg:Scoop stops the gang from exposing itself by opening the crate here.
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+tomatolauncher
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:a broken tomato launcher
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startat:red_barn_yard
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:launcher,tomato launcher,tomato catapult,catapult
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+4
+ifobjin:$this,$available
+	if:elastic_removed
+		msg:The cracked launcher lies beside the fence. You've removed its rubber band; the rest is beyond repair.
+	else
+		put:elastic,red_barn_yard
+		msg:Beside the fence lies the broken tomato launcher, still stained from the gang's recent battle with the Striekers.
+		msg:Its frame is cracked and its throwing arm bent. It's useless now, but the thick rubber band is undamaged and could be detached.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+ifobjin:$this,$available
+	msg:The frame is broken. Red shakes his head. "No more tomatoes from this one."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+globalscenery
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+gang
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:the gang
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Scoop, Peg and Red are your best friends.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:gang,boys,friends,companions
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+room
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+$start
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Jerry Todd and the Killer Bulbs
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:This adventure was conceived by #Gianluca #Gemelli and adapted by #Marco #Giorgini. It is set in the literary world of #Jerry #Todd, created in the 1920s by #Leo #Edwards.
+msg:You play #Jerry, a boy growing up in rural America in the early twentieth century. Along with his friends, he has a remarkable talent for getting into trouble.
+setvar:pressure,0
+set:withfriends
+waitkey
+goto:red_barn
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/title_en.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+_end
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:The Bulbs exposed
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:Bill reaches the nursery before the barricade breaks. Mr Bulb and his men are stopped; Cap is safe.
+msg:The still and the buried money explain the Bulbs' business. All it took to ruin them was an old grumbler and a leaking irrigation pipe.
+msg:"Killer bulbs!" Red exclaims, looking at the bulb crates.
+msg:"Almost," says Cap. "Next time, boys, if I find a suspicious pipe, I'll leave it alone."
+msg:You grin. Scoop already has the story worked out, but Peg is hungry and Red insists you've all earned an ice cream.
+msg:Bill gives you all a stern look, then smiles and nods. The gang has earned a quiet afternoon.
+msg:THE END
+waitkey
+quit
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/_end.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+_caught
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:The barricade fails
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:The unbraced door bursts open before help can reach Cap. The gang's rescue has failed.
+msg:Try again? (Y/N)
+getkey
+ifkey:Y
+	start
+else
+	quit
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/_caught.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+red_barn
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Red's barn
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Summer heat hangs beneath the barn's timber rafters. Grain sacks and empty crates make comfortable seats, and sunlight streams through an open window, catching the dust in the air. The smell of dry hay fills the place.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+inside Red's barn
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[east]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.e
+3
+red_barn_yard
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/red_barn.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:On a sweltering morning, you're chatting with Peg, Red and Scoop in Red's barn.
+msg:"In this heat, we could do with an ice cream," Scoop says at last. But, as usual, nobody has a penny.
+waitkey
+clear
+msg:$roomdesc
+ifdef:$room.exits	
+	msg:There are clear exits to +
+	msg:$room.exits
+	msg:.
+endif
+ifobjinattr:$any,$here,visible+listable
+	msg:You see: +
+	listobjin:$here,visible+listable
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:red
+5
+if:!note_read
+	if:job_remembered
+		msg:Red: "Cap promised us work. Let's go and see him. Ice cream comes after payday."
+	else
+		set:job_remembered
+		msg:Red sits up. "Cap promised to pay us for helping with some jobs!"
+		msg:Scoop is already on his feet. "Then we visit Cap. Work first, ice cream afterwards."
+	endif
+else
+	msg:Scoop: "We won't find Cap by staying in the barn. He was called to the nursery."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:peg
+5
+if:!note_read
+	if:job_remembered
+		msg:Peg: "Cap promised us work. Let's go and see him. Ice cream comes after payday."
+	else
+		msg:Peg pats his empty pockets. "Not even enough for one scoop."
+		msg:Red has a curious look on his face, though.
+	endif
+else
+	msg:Scoop: "We won't find Cap by staying in the barn. He was called to the nursery."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:scoop
+5
+if:!note_read
+	if:job_remembered
+		msg:Scoop: "Cap promised us work. Let us go see him. Ice cream comes after payday."
+	else
+		msg:"Absolutely nothing," says Scoop.
+		msg:Red has a curious look on his face, though.
+	endif
+else
+	msg:Scoop: "We won't find Cap by staying in the barn. He was called to the nursery."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:$none
+5
+if:!note_read
+	if:job_remembered
+		msg:Scoop: "Cap promised us work. Let us go see him. Ice cream comes after payday."
+	else
+		msg:Your friends search their pockets, but in the end they all shake their heads.
+		msg:Red has a curious look on his face, though.
+	endif
+else
+	msg:Scoop: "We won't find Cap by staying in the barn. He was called to the nursery."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Let's go back to the villa. We need to find out what those men are hiding."
+		else
+			if:ambush_cleared
+				msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+			else
+				if:note_read
+					msg:Scoop: "We won't find Cap by staying in the barn. He was called to the nursery."
+				else
+					if:job_remembered
+						msg:Scoop: "Let's go and see Cap. Work first, ice cream afterwards."
+					else
+						msg:Peg: "No money, no ice cream. Red, what's that look on your face?"
+					endif
+				endif
+			endif
+		endif
+	endif
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+4
+if:job_remembered
+	goto:red_barn_yard
+else
+	msg:Scoop stays on his crate. "Before we wander off, let us talk over how to earn our ice cream."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sacks
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Grain sacks are stacked in the shade. They make surprisingly comfortable seats.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sacks,grain
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+emptycrates
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Empty crates serve as seats for the boys. Nothing useful is hidden in them.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:crates,seats
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+barnwindow
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Beyond the open window, summer shimmers over the path to Cap's house.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:window,breeze
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+pockets
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Four sets of pockets, and not a penny between them.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:pockets,money,coins
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:You turn your pockets inside out. Peg searches his once more. Scoop sighs. "Ice cream on credit? No chance."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+rafters
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:rafters,beams
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hay
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:hay
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+barn
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+red_barn_yard
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Red's barn yard
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+An old tree shades part of the dusty farm courtyard. Red's barn rises above a weathered fence, with barrels and empty crates gathered against its wall.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+in the courtyard outside Red's barn
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[south,west]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.w
+3
+red_barn
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.s
+3
+cap_porch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/red_barn_yard.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+tree
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:tree
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+fence
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:fence
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+barrels
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:barrels,casks
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+crates
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:crates
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+barn
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:barn
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wall
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Let's go back to the villa. We need to find out what those men are hiding."
+		else
+			if:ambush_cleared
+				msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+			else
+				if:note_read
+					if:nest_seen
+						ifobjin:elastic,$inventory
+							ifobjin:stone,$inventory
+								msg:Red: "You've got everything you need. Let's go back to the stream path."
+							else
+								msg:Red: "Now we need a stone. We saw some along the stream bank."
+							endif
+						else
+							msg:Red: "The tomato launcher is broken, but we can detach its rubber band."
+						endif
+					else
+						msg:Scoop: "Let's go back to Cap's porch and find a way to the nursery."
+					endif
+				else
+					msg:Scoop: "Let's go and see Cap. His porch is south of here."
+				endif
+			endif
+		endif
+	endif
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+cap_porch
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Cap Tinkertop's porch
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Cap's little porch has the comfortable untidiness of a place much used by its owner. A wooden chair stands beside the front door, and a clay flowerpot rests on the railing. This morning, everything is unusually quiet.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+on Cap Tinkertop's porch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[north,south,southwest,east]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+red_barn_yard
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.sw
+3
+riverside_path
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/cap_porch.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+flowerpot
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+A clay flowerpot stands on the porch railing. There is room beneath its saucer.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:pot,flowerpot,flower pot,saucer
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+move
+6
+if:key_found
+	msg:Red has already checked beneath the flowerpot.
+else
+	set:key_found
+	put:sparekey,$here
+	msg:Red lifts the flowerpot. A small brass key lies underneath. "Cap showed me this in case he was out when we came to work."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+capdoor
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Cap's front door has a simple brass lock.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:door,front door,lock
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+unlock
+6
+if:capdoor_unlocked
+	msg:Cap's door is already unlocked.
+else
+	ifobjin:sparekey,$inventory
+		set:capdoor_unlocked
+		msg:Red fits the spare key into the lock and turns it, opening the door.
+		msg:Scoop calls, "Cap? It's us!" But there's no reply.
+	else
+		msg:Someone needs to find a key first.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+6
+if:capdoor_unlocked
+	msg:Scoop opens the door. The little front room lies east.
+else
+	msg:The door is locked. Red remembers Cap showing him a spare key somewhere on the porch.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+smith
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Mrs Smith and her friends are talking along the southern lane. She's still cross about yesterday's prank. For now, you'd rather take the stream path to the southwest.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:smith,mrs smith,mrs. smith,women,ladies
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:ambush_cleared
+	msg:Mrs Smith and her friends have gone. The southern lane is clear.
+else
+	msg:Mrs Smith and her friends are talking along the southern lane. She's still cross about yesterday's prank. You'd rather take the stream path to the southwest.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+porch
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:porch,railing
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+chair
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:chair
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+house
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:sparekey
+5
+if:capdoor_unlocked
+	msg:Cap's door is already unlocked.
+else
+	ifobjin:sparekey,$inventory
+		set:capdoor_unlocked
+		msg:Red fits the spare key into the lock and turns it, opening the door.
+		msg:Scoop calls, "Cap? It's us!" But there's no reply.
+	else
+		msg:Someone needs to find a key first.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+4
+if:capdoor_unlocked
+	goto:cap_interior
+else
+	msg:The front door is locked.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+s
+4
+if:note_read
+	if:ambush_cleared
+		goto:town_lane
+	else
+		set:smith_seen
+		msg:Down the lane, Mrs Smith is chatting with some friends.
+		msg:"She won't have forgotten yesterday's prank," says Scoop. "We'd better take the stream path to the southwest."
+	endif
+else
+	msg:Before leaving, you'd better find out where Cap has gone. He may have left a message inside.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sw
+4
+if:note_read
+	goto:riverside_path
+else
+	msg:Before leaving, you'd better find out where Cap has gone. He may have left a message inside.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Let's go back to the villa. We need to find out what those men are hiding."
+		else
+			if:ambush_cleared
+				msg:Scoop: "The southern lane is clear. Let's go back to the nursery."
+			else
+				if:note_read
+					if:nest_seen
+						ifobjin:elastic,$inventory
+							msg:Red: "Back to the stream path. We can use the rubber band there and look for a stone."
+						else
+							msg:Red: "Let's go back to the barn yard and get the launcher's rubber band."
+						endif
+					else
+						if:smith_seen
+							msg:Scoop: "Mrs Smith is still on the southern lane. Let's try the path to the southwest."
+						else
+							msg:Scoop: "Cap was called to the nursery. Let's see which way we can go."
+						endif
+					endif
+				else
+					if:capdoor_unlocked
+						msg:Scoop: "Let's go inside and see if Cap left a message."
+					else
+						if:key_found
+							ifobjin:sparekey,$inventory
+								msg:Red: "Let's try the key in the lock."
+							else
+								msg:Red: "The key is under the flowerpot. Don't leave it there."
+							endif
+						else
+							msg:Red: "Cap showed me a spare key under that flowerpot."
+						endif
+					endif
+				endif
+			endif
+		endif
+	endif
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+cap_interior
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Inside Cap's house
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Sunlight falls across Cap's modest front room. A folded note lies on the table beside his toolbox, while a wooden chair faces the window. An old telephone hangs on the wall. The room has the look of somewhere its owner expected to return to shortly.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+inside Cap's house
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[west]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.w
+3
+cap_porch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/cap_interior.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		ifobjin:screwdriver,$inventory
+			msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+		else
+			msg:Red: "Let's take the screwdriver before going back to the nursery."
+		endif
+	else
+		if:gang_reunited
+			msg:Scoop: "Let's go back to the villa. We need to find out what those men are hiding."
+		else
+			if:note_read
+				if:ambush_cleared
+					msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+				else
+					msg:Scoop: "We know where to look for Cap: the nursery."
+				endif
+			else
+				msg:Scoop: "That note on the table might explain where Cap has gone."
+			endif
+		endif
+	endif
+else
+	msg:The others are waiting to hear from you; they aren't here with you.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+note
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+A folded note left on the table.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:note,message,letter
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+set:note_read
+msg:Red reads: "Captain, please come to the nursery to repair my irrigation. - Mrs Bulb."
+msg:Scoop folds his arms. "Then let's go and find him at the nursery."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+toolbox
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Cap has set out a screwdriver for the boys' morning jobs.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:toolbox,tools
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+homephone
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Cap's telephone is silent. If you have news to send, the others can wait here for your call.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:telephone,phone
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+table
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:table
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+chair
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:chair
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+window
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:window,side window
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wall
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+house
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+room
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+riverside_path
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Riverside path
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/riverside_path.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+The narrow path follows a quiet stream beneath overhanging trees. Smooth stones lie along the bank, and dense bushes crowd a bend in the trail. Branches interlace above the undergrowth, hiding patches of sky behind their leaves.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+on the path beside the stream
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[northeast,southeast]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.ne
+3
+cap_porch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.se
+3
+town_lane
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:$roomdesc
+ifdef:$room.exits	
+	msg:There are clear exits to +
+	msg:$room.exits
+	msg:.
+endif
+if:withfriends
+	ifisin:peg,$here
+	else
+		msg:Peg, Red and Scoop catch up with you.
+	endif
+	put:peg,$here
+	put:red,$here
+	put:scoop,$here
+endif
+if:ambush_cleared
+else
+	msg:You stop short. Some Strieker boys are crouching in the bushes at the bend, waiting to ambush the gang. They haven't spotted you yet.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+se
+4
+if:ambush_cleared
+	goto:town_lane
+else
+	msg:Some Strieker boys are crouching in the bushes ahead, waiting to ambush you and your friends. You stop before they spot you. There must be a way to shift them without a fight.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+4
+ifisroom:riverside_path
+	if:ambush_cleared
+		msg:The Striekers have gone. You leave the wasps alone.
+	else
+		if:nest_seen
+			ifobjin:elastic,$inventory
+				ifobjin:stone,$inventory
+					set:ambush_cleared
+					put:stone,$nowhere
+					put:striekers,$nowhere
+					msg:You stretch the rubber band, fit the stone and aim at the branch above the Striekers. The shot clips the nest loose. It drops into the bushes; a furious buzzing sends the boys running across the fields.
+					msg:You and your friends keep well clear of the wasps and hurry along the stream to the town lane. Mrs Smith and her friends have gone too; both routes to Cap's house are clear now.
+					waitkey
+					goto:town_lane
+				else
+					msg:You have the rubber band, but you need a small stone. Smooth stones lie along the stream bank.
+				endif
+			else
+				msg:A hand-thrown stone would be too uncertain. Red remembers the sound rubber band on the broken tomato launcher in the farm courtyard.
+			endif
+		else
+			msg:You need a safe target. You should examine the bushes and branches before trying anything.
+		endif
+	endif
+else
+	msg:Peg, Red and Scoop follow you.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Let's go back to the villa. We need to find out what those men are hiding."
+		else
+			if:ambush_cleared
+				msg:Scoop: "The Striekers have run off. The path southeast leads to the town lane; we can reach the nursery from there."
+			else
+				if:nest_seen
+					ifobjin:elastic,$inventory
+						ifobjin:stone,$inventory
+							msg:Red: "You've got the rubber band and a stone. Try hitting the nest above the Striekers."
+						else
+							msg:Red: "You've got the rubber band. Pick up one of those smooth stones along the bank."
+						endif
+					else
+						msg:Red: "We need the launcher's rubber band. Let's go back to the barn yard."
+					endif
+				else
+					msg:Peg: "The Striekers are waiting for us to make a mistake. Let's look at the bushes before getting any closer."
+				endif
+			endif
+		endif
+	endif
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+riverbushes
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+The thick bushes hide the bend in the path. Branches hang over the boys' hiding place.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:vegetation,bushes,shrubs,trees,branches,leaves,undergrowth
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:ambush_cleared
+	msg:The bushes are deserted. The broken nest lies beyond the path, and you keep well away from it.
+else
+	set:nest_seen
+	msg:You peer through the leaves. The Striekers are waiting below a branch that carries a wasps' nest. They don't seem to have noticed it.
+	msg:Red whispers, "A slingshot could bring that down."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+waspnest
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+A papery wasps' nest hangs above the Striekers' hiding place.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:nest,wasp nest,wasps nest,wasps' nest,hive,wasps
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:ambush_cleared
+	msg:The bushes are deserted. The broken nest lies beyond the path, and you keep well away from it.
+else
+	set:nest_seen
+	msg:You peer through the leaves. The Striekers are waiting below a branch that carries a wasps' nest. They don't seem to have noticed it.
+	msg:Red whispers, "A slingshot could bring that down."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+throw
+6
+ifisroom:riverside_path
+	if:ambush_cleared
+		msg:The Striekers have gone. You leave the wasps alone.
+	else
+		if:nest_seen
+			ifobjin:elastic,$inventory
+				ifobjin:stone,$inventory
+					set:ambush_cleared
+					put:stone,$nowhere
+					put:striekers,$nowhere
+					msg:You stretch the rubber band, fit the stone and aim at the branch above the Striekers. The shot clips the nest loose. It drops into the bushes; a furious buzzing sends the boys running across the fields.
+					msg:You and your friends keep well clear of the wasps and hurry along the stream to the town lane. Mrs Smith and her friends have gone too; both routes to Cap's house are clear now.
+					waitkey
+					goto:town_lane
+				else
+					msg:You have the rubber band, but you need a small stone. Smooth stones lie along the stream bank.
+				endif
+			else
+				msg:A hand-thrown stone would be too uncertain. Red remembers the sound rubber band on the broken tomato launcher in the farm courtyard.
+			endif
+		else
+			msg:You need a safe target. You should examine the bushes and branches before trying anything.
+		endif
+	endif
+else
+	msg:Peg, Red and Scoop follow you.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+stream
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:stream,bank
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+grass
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:grass
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sky
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sky
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+path
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:path,trail
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+town_lane
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:The town lane
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+The familiar town lane runs between modest houses, garden fences and patches of dusty grass. On an ordinary morning there would be deliveries to dodge and neighbours to greet. Today, the quiet makes every distant voice and passing engine easier to notice.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+on the town lane
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[north,east,south,west,northwest]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+cap_porch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.nw
+3
+riverside_path
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\town_lane.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+4
+if:money_found
+	if:bulb_away
+		goto:nursery_front
+	else
+		set:bulb_away
+		put:mrsbulb,$nowhere
+		msg:Mrs Bulb hurries out, locks the nursery and sets off down the road. The gang waits until she is gone.
+		waitkey
+		goto:nursery_front
+	endif
+else
+	goto:nursery_front
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+n
+4
+if:ambush_cleared
+	goto:cap_porch
+else
+	msg:Mrs Smith and her friends still occupy the lane towards Cap's house. You decide not to attract their attention.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+w
+4
+if:villa_known
+	goto:phone_booth
+else
+	msg:There's no reason to go further in that direction
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+s
+4
+if:money_found
+	msg:"We cannot go to Bill now, after sneaking into the villa grounds. We need to understand what's going on first," says Red. "And find Cap!" adds Peg.
+else
+	goto:bill_office
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Let's go back to the villa. We need to find out what those men are hiding."
+		else
+			msg:Scoop: "The nursery is east. That's where Cap was called."
+		endif
+	endif
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+houses
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:houses
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+fences
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:fences
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+gardens
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:gardens
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+grass
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:grass
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+lane
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:lane,road
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+nursery_front
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Bulb's nursery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Baskets of flower bulbs stand in orderly rows outside the glasshouses. Labels promise fine flowers, and the air smells of damp soil and growing things. A stout wooden door guards the private entrance, while a thick hedge screens the edge of the yard.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+in the forecourt of Bulb's nursery
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[west,east,north]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.w
+3
+town_lane
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.e
+3
+hedge_watch
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+glasshouse
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\nursery_front.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+tracks
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Most marks are ordinary boot prints. One narrow trail looks different.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:tracks,prints,footprints,marks,impressions
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+set:tracks_seen
+msg:Red crouches beside the marks. "A boot heel and a wooden leg. Cap was here!"
+if:bulb_denied
+	msg:Scoop glances towards Mrs Bulb. "Then why deny it? He might still be inside. Let's watch the loading yard without letting her see us."
+	msg:A gap behind the hedge looks large enough to hide the four of you.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+baskets
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+The baskets carry a painted label: BULB - FIRST-CLASS BULBS.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:baskets,bulbs
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:"Fine bulbs," you say. "It's the Bulbs selling them that worry me."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+nurserydoor
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+A stout door with a small lock. Peg could not break it quietly.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:door,lock,nursery door
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:nursery_unlocked
+	msg:Red has released the lock. The door will open.
+else
+	if:bulb_away
+		msg:Mrs Bulb locked it when she left. Red studies the small lock.
+	else
+		msg:Mrs Bulb keeps the private glasshouse closed to visitors.
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+unlock
+6
+if:money_found
+	ifobjin:screwdriver,$inventory
+		if:nursery_unlocked
+			msg:The lock is already released.
+		else
+			set:nursery_unlocked
+			msg:Red works at the lock with Cap's screwdriver. A soft click rewards his patience.
+		endif
+	else
+		msg:Someone needs to pick that up first.
+	endif
+else
+	msg:Scoop stops Red. "Not while she is here. Let us find out what happened first."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+6
+if:nursery_unlocked
+	msg:The door opens. The glasshouse lies north.
+else
+	msg:The entrance is closed. Peg points to the lock. "Quiet work, not brute force."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+6
+msg:Peg tests the door and shakes his head. "Too stout. We would only raise the alarm."
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+glasshouses
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:glasshouses,greenhouses
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+labels
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:labels,label
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hedge
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:hedge
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+nursey
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+plants
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:screwdriver
+5
+if:money_found
+	ifobjin:screwdriver,$inventory
+		if:nursery_unlocked
+			msg:The lock is already released.
+		else
+			set:nursery_unlocked
+			msg:Red works at the lock with Cap's screwdriver. A soft click rewards his patience.
+		endif
+	else
+		msg:Someone needs to pick that up first.
+	endif
+else
+	msg:Scoop stops Red. "Not while she is here. Let us find out what happened first."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+n
+4
+if:nursery_unlocked
+	goto:glasshouse
+else
+	msg:The stout door bars the way.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:nursery_unlocked
+		msg:Scoop: "The door is unlocked. Let's enter the glasshouse to the north."
+	else
+		if:money_found
+			ifobjin:screwdriver,$inventory
+				msg:Red: "Let's try working on the lock with Cap's screwdriver."
+			else
+				msg:Red: "We could use the screwdriver on that lock. Let's go back to Cap's house and get it."
+			endif
+		else
+			if:gang_reunited
+				msg:Scoop: "Let's go back to the villa. We need to find out what those men are hiding."
+			else
+				if:tracks_seen
+					msg:Scoop: "Cap was here. Let's hide behind the hedge to the east and see what happens."
+				else
+					if:bulb_denied
+						msg:Red: "Those marks beside the entrance deserve a closer look."
+					else
+						msg:Scoop: "Let's ask Mrs Bulb if Cap has arrived."
+					endif
+				endif
+			endif
+		endif
+	endif
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hedge_watch
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Behind the nursery hedge
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Between the thick hedge and the stacked bulb baskets is a narrow, shaded space. Through gaps in the leaves, much of the loading yard is visible. The foliage offers good concealment, provided nobody makes too much noise.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+behind the nursery hedge
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[west]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.w
+3
+nursery_front
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/nursery_hedge.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hide
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wait
+4
+ifobjin:truck,$available
+	if:truck_seen
+		msg:The men are finishing their conversation at the door. The hat and the crate leave you with little doubt: you need to find out where the truck is going.
+		msg:Scoop points to the raised tarpaulin. "You can hide under there, Jerry. We'll wait for news at Cap's house."
+	else
+		set:truck_seen
+		put:hat,hedge_watch
+		msg:The nursery door opens. The driver and a second man emerge carrying a long wooden crate. The one walking backwards stops to catch his breath.
+		msg:"Easy, this way," the driver mutters. Together they lift the crate onto the truck bed. As they tilt it, a hat slips out from under the lid.
+		msg:Red grips your arm. "That's Cap's!"
+		msg:The men push the crate under the tarpaulin, then return to the door to speak to Mrs Bulb. The hat lies beside the baskets, only a few steps from your hiding place.
+		msg:The tarpaulin is raised on one side. Scoop points to it. "You could hide under there. If they're taking Cap away, we need to know where. We'll wait for your call at his house."
+	endif
+else
+	if:villa_known
+		msg:The loading yard is empty. The truck led you to the villa.
+	else
+		if:tracks_seen
+			if:watch_started
+				msg:The Striekers are making too much noise. Peg may have to move them before someone discovers your hiding place.
+			else
+				set:watch_started
+				put:striekers,$here
+				msg:You all crouch behind the baskets. Before you can see any movement in the nursery, the Striekers arrive. They speak loudly and threaten to expose your hiding place.
+			endif
+		else
+			msg:Scoop lowers his voice. "First, let's find a reason to suspect the nursery. Those marks beside the entrance, perhaps..."
+		endif
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:striekers
+5
+ifobjin:striekers,$available
+	put:striekers,$nowhere
+	put:truck,hedge_watch
+	msg:Peg shoulders a heavy basket into the gap and advances on the Striekers. They back away, then turn and run. You all crouch behind the baskets again.
+	msg:A little later, you hear an engine. A truck rolls slowly into the loading yard and stops beside the nursery door. The driver climbs out of the cab and knocks.
+	msg:The door opens a crack. The man exchanges a few words with someone inside, then switches off the engine.
+	msg:Scoop touches your arm. "Wait. Let's see what they've come to collect."
+else
+	msg:The Striekers are not here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+follow
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:truck
+5
+ifobjin:truck,$available
+	if:truck_seen
+		msg:The men turn to head back to the truck. "Jerry, now!" Scoop whispers.
+		msg:You dash out of hiding as the driver climbs into the cab. The engine starts and the truck begins to move. You grab the tailboard, haul yourself onto the bed and slip beneath the tarpaulin unseen.
+		msg:Through a fold in the canvas, you glimpse your friends leaving the yard. Scoop is taking them back to Cap's house to wait for your call.
+		set:jerry_alone
+		unset:withfriends
+		put:truck,$nowhere
+		put:crate,truck_bed
+		put:peg,cap_interior
+		put:red,cap_interior
+		put:scoop,cap_interior
+		waitkey
+		goto:truck_bed
+	else
+		msg:Scoop catches your sleeve. "Wait. We don't know what they've come to collect yet. Let's watch."
+	endif
+else
+	msg:You don't see the truck here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+run
+4
+ifobjin:truck,$available
+	if:truck_seen
+		msg:The men turn to head back to the truck. "Jerry, now!" Scoop whispers.
+		msg:You dash out of hiding as the driver climbs into the cab. The engine starts and the truck begins to move. You grab the tailboard, haul yourself onto the bed and slip beneath the tarpaulin unseen.
+		msg:Through a fold in the canvas, you glimpse your friends leaving the yard. Scoop is taking them back to Cap's house to wait for your call.
+		set:jerry_alone
+		unset:withfriends
+		put:truck,$nowhere
+		put:crate,truck_bed
+		put:peg,cap_interior
+		put:red,cap_interior
+		put:scoop,cap_interior
+		waitkey
+		goto:truck_bed
+	else
+		msg:Scoop catches your sleeve. "Wait. We don't know what they've come to collect yet. Let's watch."
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+w
+4
+ifobjin:truck,$available
+	if:truck_seen
+		msg:The truck is about to leave with the crate. You can't abandon your only lead now.
+	else
+		msg:Scoop stops you. "Wait, Jerry. Let's see what they've come to collect."
+	endif
+else
+	goto:nursery_front
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+	else
+		if:gang_reunited
+			msg:Scoop: "Let's go back to the villa. We need to find out what those men are hiding."
+		else
+			if:truck_seen
+				msg:Scoop: "Jerry, follow that truck! You can hide beneath the tarpaulin."
+			else
+				ifobjin:truck,$available
+					msg:Scoop: "The truck has just arrived. Let's watch what they've come to collect."
+				else
+					if:watch_started
+						msg:Scoop: "Those Striekers will give us away. Peg, can you get rid of them without too much noise?"
+					else
+						if:tracks_seen
+							msg:Scoop: "Let's hide behind the baskets and watch the loading yard."
+						else
+							msg:Red: "First, let's check the marks beside the nursery entrance."
+						endif
+					endif
+				endif
+			endif
+		endif
+	endif
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hedge
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:hedge,foliage,vegetation
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+baskets
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:baskets,bulbs
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+leaves
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:leaves
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+loading yard
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:loading yard,yard
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+men
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:men,man,driver
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+ifobjin:truck,$available
+	if:truck_seen
+		msg:The crate is on the truck bed, beneath the tarpaulin. The men are finishing their conversation at the nursery door. From your hiding place, you could reach the tailboard without passing in front of the cab.
+		msg:Scoop whispers, "Go on, Jerry. Follow that truck!"
+	else
+		set:truck_seen
+		put:hat,hedge_watch
+		msg:The nursery door opens. The driver and a second man emerge carrying a long wooden crate. The one walking backwards stops to catch his breath.
+		msg:"Easy, this way," the driver mutters. Together they lift the crate onto the truck bed. As they tilt it, a hat slips out from under the lid.
+		msg:Red grips your arm. "That's Cap's!"
+		msg:The men push the crate under the tarpaulin, then return to the door to speak to Mrs Bulb. The hat lies beside the baskets, only a few steps from your hiding place.
+		msg:The tarpaulin is raised on one side. Scoop points to it. "You could hide under there. If they're taking Cap away, we need to know where. We'll wait for your call at his house."
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+truck_bed
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Under the truck's tarpaulin
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Heavy canvas hangs low over the truck's wooden bed. A large shipping crate occupies most of the cramped space, surrounded by ropes and folds of tarpaulin. The floor shudders with the engine, and dust drifts through the gaps with every jolt.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+under the truck's tarpaulin
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/truck_tarpaulin.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+tarpaulin
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Heavy canvas hides you from anyone in the cab.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:tarpaulin,canvas
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:You keep the canvas between yourself and the men. You can wait here until they stop.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+ropes
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:ropes,rope,knots
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+floor
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:floor,truck bed
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+crate
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:The crate is large enough to hold a person.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+6
+msg:Trying to open it now would be risky. The driver might notice you.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+truck
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:truck,lorry
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+engine
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wait
+4
+set:villa_known
+put:crate,$nowhere
+msg:The truck slows outside a villa surrounded by a high wall. While the men get out to open the gate, you slip off the truck bed and hide behind a pillar.
+msg:The truck enters the grounds. Before the gate closes, you glimpse the two men unloading the crate and dragging it along the side of the villa.
+msg:Then the shrubs hide them from view.
+msg:You can't see the back garden through the bars. To the south, across the road, there's a telephone booth.
+waitkey
+goto:villa_gate
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hide
+4
+msg:You flatten yourself beneath the canvas and wait for the truck to stop.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+msg:The others are waiting at Cap's house. Stay hidden until the truck stops, then find a way to contact them.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+phone_booth
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:The public telephone
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+A public telephone stands in a small wooden booth beside the road. Its black receiver hangs above a worn shelf, polished by years of elbows and impatient fingers. A low stone wall partly conceals the booth from the neighbouring property.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+at the public telephone
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[east,north]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.e
+3
+town_lane
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+villa_gate
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/public_telephone.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+telephone
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+The receiver is intact. You know Cap's telephone number.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:telephone,phone,receiver
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+call
+6
+ifobjin:coin,$inventory
+	if:villa_known
+		if:gang_reunited
+			msg:The call has already brought the gang together.
+		else
+			put:coin,$nowhere
+			set:gang_reunited
+			set:withfriends
+			put:peg,villa_gate
+			put:red,villa_gate
+			put:scoop,villa_gate
+			unset:jerry_alone
+			msg:You call Cap's house and tell your friends where you are. "The truck went into a villa. The wall's too high to see what they're doing. Come to the gate, quietly!"
+			msg:You return to the gate. A quarter of an hour later, Scoop, Peg and Red join you. Peg studies the wall. "If you want a look over it, I can give you a hand."
+			waitkey
+			goto:villa_gate
+		endif
+	else
+		msg:There is nobody the gang needs to call from here yet.
+	endif
+else
+	if:gang_reunited
+		msg:The call has already brought the gang together.
+	else
+		msg:You need a coin to use it
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:call,telephone
+7
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+booth
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:booth,phone booth,telephone booth
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:coin_found
+	msg:It's just a phone booth
+else
+	set:coin_found
+	msg:There's a coin on the ground, under a newspaper!
+	put:coin,$here
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shelf
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:shelf,ledge
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wall
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:wall,boundary wall
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+road
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+call
+4
+ifobjin:coin,$inventory
+	if:villa_known
+		if:gang_reunited
+			msg:The call has already brought the gang together.
+		else
+			put:coin,$nowhere
+			set:gang_reunited
+			set:withfriends
+			put:peg,villa_gate
+			put:red,villa_gate
+			put:scoop,villa_gate
+			unset:jerry_alone
+			msg:You call Cap's house and tell your friends where you are. "The truck went into a villa. The wall's too high to see what they're doing. Come to the gate, quietly!"
+			msg:You return to the gate. A quarter of an hour later, Scoop, Peg and Red join you. Peg studies the wall. "If you want a look over it, I can give you a hand."
+			waitkey
+			goto:villa_gate
+		endif
+	else
+		msg:There is nobody the gang needs to call from here yet.
+	endif
+else
+	if:gang_reunited
+		msg:The call has already brought the gang together.
+	else
+		msg:You need a coin to use it
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:call,telephone
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+4
+if:jerry_alone
+	msg:You must telephone the others before leaving the villa.
+else
+	goto:town_lane
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:gang_reunited
+	if:money_found
+		msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+	else
+		if:villa_men_gone
+			msg:Scoop: "Back to the gate to the north: we can enter the garden now."
+		else
+			msg:Scoop: "Let's go back to the villa gate to the north. We need to see what those men are doing."
+		endif
+	endif
+else
+	ifobjin:coin,$inventory
+		msg:You have a coin and know Cap's number. Call your friends and tell them where you are.
+	else
+		if:coin_found
+			msg:The coin is on the ground in the booth. Pick it up to call your friends.
+		else
+			msg:The others are waiting for your call. Check whether there's anything useful in the booth.
+		endif
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+villa_gate
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:The villa gate
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+An iron gate stands between solid stone pillars, with a small brass nameplate fixed beside it. Beyond the bars, carefully tended shrubs partly conceal a handsome villa. The high boundary wall gives the property an air of privacy that seems almost unfriendly.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+outside the villa gate
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[south,north]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.s
+3
+phone_booth
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\villa_gate.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+nameplate
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+A small brass nameplate beside the gate.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:nameplate,plate,name
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:You wipe the brass nameplate: "MR BULB". The nursery owner's surname. The crate's destination seems less and less like a coincidence.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+gate
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:gate
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+pillars
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:pillars
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bars
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:bars
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shrubs
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:shrubs
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+villa
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:villa
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wall
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:wall,boundary wall
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:villa_men_gone
+	msg:Now the men have gone, there's no need to peer over the wall. The gap beside the gate lets you into the garden.
+else
+	if:crate_buried
+		msg:You know where they buried the crate. Now you just need to make sure the men leave.
+	else
+		if:gang_reunited
+			msg:Peg cups his hands and braces himself against the wall. "A foot here, Jerry. I'll lift you. Red and Scoop can keep watch."
+		else
+			msg:The wall is too high and smooth to climb alone. If someone gave you a lift, you could reach the top and look into the garden. The others are waiting for news at Cap's house; there's a public telephone to the south.
+		endif
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+climb
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+6
+if:gang_reunited
+	if:villa_men_gone
+		msg:There's no need to climb now: the men have gone, and you can enter through the gap beside the gate.
+	else
+		if:crate_buried
+			msg:You've seen where they buried the crate. Better stay hidden and wait for them to leave.
+		else
+			msg:Peg cups his hands and lifts you. You reach the top of the wall and peer just far enough over it to see, while Red and Scoop keep watch.
+			msg:Beside the toolshed, the two men are finishing a hole. The crate lies next to them. "Nobody will look for it here," says the one in the cap.
+			msg:They lower it into the hole and begin covering it with earth. Your stomach tightens: what if Cap really is inside?
+			msg:Peg gives your shoe a gentle tug. "What's happening up there?" You slide back down and tell them what you've seen.
+			msg:Scoop holds you back. "Wait. They have to leave first."
+			set:crate_buried
+			put:crate,$nowhere
+		endif
+	endif
+else
+	msg:You try to cling to the wall, but can't reach the top. You can't manage alone. You need your friends' help.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wait
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hide
+4
+if:villa_men_gone
+	msg:The truck has gone. Peg points to a gap beside the gate: you can go in and check the crate.
+else
+	if:crate_buried
+		msg:You stay hidden beside the gate. A little later the engine starts: the two men drive out in the truck and head down the road.
+		msg:You wait until the sound fades. Peg points to a gap beside the gate. "Now."
+		set:villa_men_gone
+	else
+		msg:From beyond the wall comes a metallic clink, followed by a rhythmic scraping in the earth. The shrubs hide the back garden: you can't see what the men are doing from the gate.
+		if:gang_reunited
+			msg:Peg looks at the top of the wall. "I can lift you. Take a look, but keep out of sight."
+		else
+			msg:You can't see over the wall on your own. You should contact your friends: the public telephone is south of here.
+		endif
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+n
+4
+if:villa_men_gone
+	goto:villa_garden
+else
+	if:crate_buried
+		msg:The men are still in the grounds. Better stay hidden until they've driven away.
+	else
+		if:gang_reunited
+			msg:You don't know where the men are. Before going in, you could ask Peg to help you look over the wall.
+		else
+			msg:It's not safe to enter alone. First, call your friends from the public telephone to the south.
+		endif
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:gang_reunited
+	if:money_found
+		msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+	else
+		if:villa_men_gone
+			msg:Peg: "The men have gone. Let's slip through the gap and enter the garden."
+		else
+			if:crate_buried
+				msg:Scoop: "Now we know where the crate is, but the men are still inside. Let's wait for them to leave."
+			else
+				msg:Peg: "The wall's too high to see over from here. I can lift you: try climbing it."
+			endif
+		endif
+	endif
+else
+	msg:The others are waiting for news. The truck went in here: go to the public telephone to the south and call them.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+villa_garden
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:The villa garden
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Thick shrubs shelter a secluded corner of the villa garden. A small toolshed stands against the boundary wall, with gardening equipment left nearby. Among the tidy borders, a patch of disturbed earth looks conspicuously fresh.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+in the villa garden
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[south]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.s
+3
+villa_gate
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\villa_garden.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+earth
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Loose earth marks the spot where the men buried the crate.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:earth,soil,ground
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+dig
+6
+ifobjin:spade,$inventory
+	if:crate_dug
+		msg:The crate is already uncovered.
+	else
+		put:crate,$here
+		set:crate_dug
+		msg:Peg takes the spade and shifts the earth. The suspicious crate emerges intact. Its lid can be opened.
+	endif
+else
+	msg:Peg could dig quickly with the spade by the toolshed.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:dig
+7
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+toolshed
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+A spade has been left outside the small toolshed.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:toolshed,shed
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wall
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:wall,boundary wall
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shrubs
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:shrubs
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+garden
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+villa
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+tools
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:tools,equipment
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:spade
+5
+ifobjin:spade,$inventory
+	if:crate_dug
+		msg:The crate is already uncovered.
+	else
+		put:crate,$here
+		set:crate_dug
+		msg:Peg takes the spade and shifts the earth. The suspicious crate emerges intact. Its lid can be opened.
+	endif
+else
+	msg:Peg could dig quickly with the spade by the toolshed.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+s
+4
+if:money_found
+	goto:villa_gate
+else
+	msg:Scoop wants to inspect the buried crate before the gang leaves its hiding place.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:money_found
+		msg:Scoop: "Back to the nursery. That's where we need to look for Cap."
+	else
+		if:crate_dug
+			msg:Scoop: "Now we can open the crate and see what's inside."
+		else
+			ifobjin:spade,$inventory
+				msg:Peg: "With the spade, I can dig where the earth's been disturbed."
+			else
+				msg:Peg: "That spade by the toolshed will help us dig."
+			endif
+		endif
+	endif
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+glasshouse
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:The nursery glasshouse
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Warm light filters through the glass roof onto neat ranks of pots and bulbs. Moisture beads on some of the panes, and the air is close with the smell of watered earth. Beneath it lingers another smell, faintly sour and less easy to explain.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+inside the nursery glasshouse
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[south,north]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.s
+3
+nursery_front
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+potting_room
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/nursery_glasshouse.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+roof
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:roof
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+glass
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:glass
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+panes
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:panes
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+pots
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:pots
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bulbs
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:bulbs
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+glasshouse
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:glasshouse,greenhouse
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	msg:Scoop: "Let's keep looking. The potting room is north of here."
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+potting_room
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:The potting room
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Soil dusts the surface of a heavy oak potting bench. Clay pots, bulb boxes and gardening supplies crowd a substantial wooden shelf, while several loose boards lean nearby. Daylight from a small side window leaves the corners of the room in shadow.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+in the nursery's potting room
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[south,east]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.s
+3
+glasshouse
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.e
+3
+hidden_room
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\potting_room.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shelf
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+A heavy shelf packed with bulb boxes.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:shelf,shelves,boxes
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:shelf_moved
+	msg:The shelf stands aside, revealing the hidden doorway.
+else
+	set:marks_seen
+	msg:Red notices fresh curved scratches at the shelf's feet. "It moves! Those boxes are meant to hide something."
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+move
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+6
+if:marks_seen
+	if:shelf_moved
+		msg:The shelf is already aside.
+	else
+		set:shelf_moved
+		put:cap,hidden_room
+		msg:Red finds a small catch; Peg releases the shelf from the wall and swings it aside.
+		msg:A hidden doorway opens to the east. Cap's muffled voice comes from inside.
+	endif
+else
+	msg:Peg tests the shelf. It is fastened to the wall; Red should examine it first.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bench
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+A heavy oak potting bench, close to the glasshouse doorway.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:bench,table,potting bench
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+move
+6
+if:danger
+	if:bench_set
+		msg:Peg has already pushed the bench against the door.
+	else
+		set:bench_set
+		msg:Peg heaves the oak bench against the glasshouse door. It slows an attacker, but the loose boards could brace it.
+	endif
+else
+	msg:"Why?" asks Peg.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+window
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+A small side window opens onto the lane.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:window,side window
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:danger
+	if:window_opened
+		msg:You can slip through and run to Bill. Cap certainly can't climb out, and the rest of the gang must protect him.
+	else
+		msg:The window is stuck fast. Something heavy might break the glass; you could squeeze through once the opening is clear.
+	endif
+else
+	msg:The side window opens onto the lane.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+6
+if:danger
+	if:help_called
+		msg:Bill has been called. You and your friends must hold the room until he can stop Mr Bulb.
+	else
+		if:boards_set		
+			if:window_opened
+				set:jerry_away
+				unset:withfriends
+				set:jerry_alone
+				msg:You slip through the side window and race to Bill Hadley. Scoop, Peg and Red stay with Cap while you go for help.
+				waitkey
+				goto:bill_office
+			else
+				msg:You try to get out through the side window, but it's blocked.
+			endif
+		else
+			msg:You don't want to leave your friends before they've found a way to slow the attackers.
+		endif
+	endif
+else
+	msg:To do what?
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+6
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+unlock
+6
+if:window_opened
+	msg:The window is already broken.
+else
+	msg:The window is stuck, and you can't open it.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+pots
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:pots
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+supplies
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:supplies,gardening supplies
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+room
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bulbs
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+4
+if:shelf_moved
+	goto:hidden_room
+else
+	msg:The shelf blocks the east wall.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+run
+4
+if:danger
+	if:help_called
+		msg:Bill has been called. You and your friends must hold the room until he can stop Mr Bulb.
+	else
+		if:boards_set		
+			if:window_opened
+				set:jerry_away
+				unset:withfriends
+				set:jerry_alone
+				msg:You slip through the side window and race to Bill Hadley. Scoop, Peg and Red stay with Cap while you go for help.
+				waitkey
+				goto:bill_office
+			else
+				msg:You try to get out through the side window, but it's blocked.
+			endif
+		else
+			msg:You don't want to leave your friends before they've found a way to slow the attackers.
+		endif
+	endif
+else
+	msg:To do what?
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+s
+4
+if:danger
+	msg:Heavy footsteps approach outside. The gang must protect Cap here; you can use the side window.
+else
+	goto:glasshouse
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+wait
+4
+if:danger
+	if:help_called
+		if:bench_set
+			if:boards_set
+				msg:Mr Bulb throws his weight against the door. Peg holds the bench; Red's braces stay firm. Scoop keeps Cap back. Outside, Bill shouts an order. Help has arrived!
+				waitkey
+				goto:_end
+			else
+				addvar:pressure,1
+				msg:The bench shifts under a blow. Red points to the loose boards: "Brace it!"
+				if:pressure>2
+					waitkey
+					goto:_caught
+				endif
+			endif
+		else
+			addvar:pressure,1
+			msg:Mr Bulb is at the glasshouse door. Peg must move the bench before it gives way.
+			if:pressure>2
+				waitkey
+				goto:_caught
+			endif
+		endif
+	else
+		msg:Scoop stops the gang from simply waiting. "Jerry, you must fetch Bill first. Use the side window!"
+	endif
+else
+	msg:The boys pause to listen. Nothing moves.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:danger
+		if:bench_set
+			if:boards_set
+				if:window_opened
+					msg:Scoop: "The barricade is ready and the window is clear. Jerry, run and fetch Bill!"
+				else
+					ifobjin:chair,$inventory
+						msg:Peg: "Try breaking the window with the chair."
+					else
+						msg:Red: "The window is stuck. The chair in the room behind the shelf could help us break the glass."
+					endif
+				endif
+			else
+				ifobjin:boards,$inventory
+					msg:Red: "Let's use the boards to brace the bench."
+				else
+					msg:Red: "Pick up those boards. We'll use them to brace the bench."
+				endif
+			endif
+		else
+			msg:Peg: "I can move the bench against the door. Then we'll brace it."
+		endif
+	else
+		if:shelf_moved
+			msg:Scoop: "Let's go through the opening to the east. Cap might be in there."
+		else
+			if:marks_seen
+				msg:Red: "Perhaps the shelf can be moved. Peg could try."
+			else
+				msg:Red: "Let's take a closer look at that shelf."
+			endif
+		endif
+	endif
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+potting_room_finale
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:The potting room
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Soil dusts the surface of a heavy oak potting bench. Clay pots, bulb boxes and gardening supplies crowd a substantial wooden shelf, while several loose boards lean nearby. Daylight from a small side window leaves the corners of the room in shadow.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+in the nursery's potting room
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\potting_room.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+onfirst
+3
+clear
+msg:Mr Bulb throws his weight against the door. Peg holds the bench; Red's braces stay firm. Scoop keeps Cap back.
+msg:Outside, Bill shouts an order. Help has arrived!
+waitkey
+goto:_end
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hidden_room
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Behind the shelf
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Copper pipes twist between barrels and an illicit still, hidden behind the nursery's respectable trade. Bulb crates conceal bottles and account books. A plain wooden chair stands among the equipment, and the warm air carries a sharp, sour smell.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+in the hidden distillery behind the shelf
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[west]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.w
+3
+potting_room
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png/hidden_still.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+still
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Pipes, fermenting vats and hidden bottles occupy a space absent from the nursery's public face.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:still,pipes,bottles,distillery,vats
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+msg:Red follows the pipes from the irrigation supply to an illicit still. Bulb boxes disguise bottles; the nursery is a front.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+ropes
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+5
+Ropes bind Cap's wrists.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:ropes,rope,knots
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+untie
+6
+ifobjin:cap,$available
+	if:cap_free
+		msg:Cap is already free.
+	else
+		set:cap_free
+		set:danger
+		put:cap,potting_room
+		msg:Red loosens the knots while Peg steadies Cap. "An illicit still!" Cap gasps. "I found it while fixing the irrigation. Mrs Bulb has gone for her husband. He will kill me if he gets in."
+		msg:Scoop leads Cap into the potting room. "Jerry must fetch Bill. The rest of us will brace the door."
+		waitkey
+		goto:potting_room
+	endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+6
+if:cap_free
+	msg:The ropes that bound Cap now lie on the floor.
+else
+	msg:Ropes bind Cap's wrists.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+barrels
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:barrels,casks
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+crates
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:crates
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+books
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:books,account books
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+chair
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:chair
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+equipment
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:withfriends
+	if:cap_free
+		ifobjin:chair,$inventory
+			msg:Scoop: "Let's go back to Cap in the potting room."
+		else
+			if:window_opened
+				msg:Scoop: "The window is already clear. Let's go back to Cap in the potting room."
+			else
+				msg:Red: "Let's take the chair, then go back to Cap. It might help with that stuck window."
+			endif
+		endif
+	else
+		msg:Peg: "Cap's tied up! Let's free him first."
+	endif
+else
+	msg:Your friends aren't here.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+bill_office
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+name:Bill Hadley's office
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desc
+3
+Bill Hadley's office is plain and practical. Papers lie in orderly piles on a sturdy desk, beside a black telephone. A filing cabinet occupies one corner, and daylight through the street-facing window gives the room a reassuringly ordinary appearance.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.shortdesc
+3
+inside Bill Hadley's office
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr.exits
+3
+[north]
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+exit.n
+3
+town_lane
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+image:png\bill_office.png
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+n
+4
+if:jerry_alone
+	msg:Before leaving, you must tell Bill what happened.
+else
+	goto:town_lane
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:gang
+5
+if:jerry_away
+	msg:Your friends are protecting Cap at the nursery. Tell Bill what's happening right away.
+else
+	if:withfriends
+		if:note_read
+			msg:Scoop: "We'll need more than a missed appointment to ask Bill for help. Let's look for Cap at the nursery."
+		else
+			msg:Scoop: "Let's see Cap first: he promised us work."
+		endif
+	else
+		msg:Your friends aren't here.
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+desk
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:desk
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+papers
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:papers
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+telephone
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:telephone,phone,receiver
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+cabinet
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:cabinet,filing cabinet
+5
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+window
+4
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:window,side window
+5
+<end node> 5P9i0s8y19Z

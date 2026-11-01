@@ -1,0 +1,598 @@
+<Treepad version 3.0>
+dt=Text
+<node>
+main
+0
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+objclass
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+normalobj
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr:visible+takeable+listable
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+actor
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr:actor+visible+listable
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+scenery
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr:visible
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sceneryobj
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr:visible+listable
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+topics
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr:$none
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+globalscenery
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+attr:visible
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+startin:$everywhere
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verbclass
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+genericverb
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:$none
+3
+msg:\V che cosa?
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:$unknown
+3
+msg:Qui non sembra esserci.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:$every
+3
+ifobjin:$this,$available
+	msg:Per ora non sarebbe utile.
+else
+	msg:Qui non c'è.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+movementverb
+2
+msg:Non puoi passare da quella parte.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+movementverb
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+n
+2
+ifundef:$room.exit.n
+	msg:Non puoi passare da quella parte.
+else
+	goto:$room.exit.n
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:n,nord
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+s
+2
+ifundef:$room.exit.s
+	msg:Non puoi passare da quella parte.
+else
+	goto:$room.exit.s
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:s,sud
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+e
+2
+ifundef:$room.exit.e
+	msg:Non puoi passare da quella parte.
+else
+	goto:$room.exit.e
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:e,est
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+w
+2
+ifundef:$room.exit.w
+	msg:Non puoi passare da quella parte.
+else
+	goto:$room.exit.w
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:o,ovest,w
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+ne
+2
+ifundef:$room.exit.ne
+	msg:Non puoi passare da quella parte.
+else
+	goto:$room.exit.ne
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:ne,nordest,nord-est
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+nw
+2
+ifundef:$room.exit.nw
+	msg:Non puoi passare da quella parte.
+else
+	goto:$room.exit.nw
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:no,nordovest,nord-ovest,nw
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+se
+2
+ifundef:$room.exit.se
+	msg:Non puoi passare da quella parte.
+else
+	goto:$room.exit.se
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:se,sudest,sud-est
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+sw
+2
+ifundef:$room.exit.sw
+	msg:Non puoi passare da quella parte.
+else
+	goto:$room.exit.sw
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:so,sudovest,sud-ovest,sw
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+genericverb
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+x
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:x,esamina,guarda,g,leggi,cerca,ispeziona,osserva
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:$none
+3
+msg:$roomdesc
+ifobjinattr:$any,$here,visible+listable
+	msg:Noti: +
+	listobjin:$here,visible+listable
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:$every
+3
+ifobjin:$this,$available
+	ifundef:$objdesc
+		msg:Non noti nulla di particolare.
+	else
+		msg:$objdesc
+	endif
+else
+	msg:Qui non c'è.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+take
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:prendi,raccogli,afferra
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:$every
+3
+ifobjin:$this,$here
+	ifobj:$this,takeable+visible
+		putobj:$this,$inventory
+		msg:Fatto.
+	else
+		msg:Meglio lasciare tutto al suo posto.
+	endif
+else
+	ifobjin:$this,$inventory
+		msg:Hai già ciò che cerchi di prendere.
+	else
+		msg:Qui non c'è.
+	endif
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+drop
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:posa,lascia,deponi
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+withobj:$every
+3
+ifobjin:$this,$inventory
+	putobj:$this,$here
+	msg:Fatto.
+else
+	msg:Prima bisogna raccogliere ciò che si vuole usare.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+talk
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:parla,parla con,parla a,chiedi,interroga
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+use
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:usa,utilizza
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+open
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:apri
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+close
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:chiudi
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+unlock
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sblocca,scassina
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+push
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:spingi
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+move
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:sposta,muovi,rimuovi,stacca,sgancia
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+dig
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:scava
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+hide
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:nasconditi,appostati
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+follow
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:segui,insegui
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+call
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:telefona,chiama
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+untie
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:slega,libera,sciogli
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+enter
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:entra
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+shoot
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:tira,spara,colpisci
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+throw
+2
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:lancia,scaglia
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+verb
+1
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+$unknown
+2
+msg:Scrivi AIUTO per conoscere i comandi.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+inventory
+2
+ifobjinattr:$any,$inventory,takeable
+	msg:Porti con te: +
+	listobjin:$inventory,takeable
+else
+	msg:Non porti nulla con te.
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:inventario,i
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+help
+2
+msg:Interpreti Jerry Todd; Peg, Red e Scoop ti aiutano quando sono presenti.
+msg:Muoviti con N S E O NE NO SE SO. Puoi usare GUARDA o ESAMINA, PRENDI, USA, APRI, SPOSTA, TIRA, LANCIA, SCAVA, NASCONDITI, SEGUI, TELEFONA, SLEGA, CORRI e ASPETTA.
+msg:PARLA AMICI offre un suggerimento quando gli altri sono con te. Sono disponibili SALVA, CARICA, RICOMINCIA ed ESCI..
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:aiuto,h
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+restart
+2
+msg:Confermi? (S/N)
+getkey
+ifkey:S
+	start
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:ricomincia,riavvia
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+quit
+2
+msg:Confermi? (S/N)
+getkey
+ifkey:S
+	quit
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:termina
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+load
+2
+msg:Confermi? (S/N)
+getkey
+ifkey:S
+	load
+endif
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:carica
+3
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+save
+2
+save
+msg:Salvataggio completato.
+
+<end node> 5P9i0s8y19Z
+dt=Text
+<node>
+syn:salva
+3
+<end node> 5P9i0s8y19Z
