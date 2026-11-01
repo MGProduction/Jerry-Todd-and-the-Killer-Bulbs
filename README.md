@@ -1,4 +1,6 @@
-# Jerry-Todd-and-the-Killer-Bulbs
+# Jerry Todd and the Killer Bulbs
+![Title screen](_pub/title_screen.png)
+
 A sweltering morning, four penniless friends, and a powerful craving for ice cream. What could possibly go wrong?
 
 Cap Tinkertop promised to pay Jerry and his friends for helping with a few jobs. But when the boys arrive at his house, Cap is nowhere to be found. A note leads them to the Bulbs’ nursery, where a simple search soon becomes an adventure involving suspicious footprints, secret stakeouts, and crates with mysterious contents.
@@ -11,6 +13,6 @@ Explore the town and its surroundings, examine objects, follow the clues, and fi
 Classic text commands and puzzles built around observation and using objects.
 A mystery full of friendship, mischief, and the spirit of old-fashioned boys’ adventure stories.
 Available in English and Italian.
-Set in the literary world of **Jerry Todd**, created by **Leo Edwards**, the game is based on a story by **Gianluca Gemelli**, adapted by **Marco Giorgini**, and made with **StoryTllr**.
+Set in the literary world of **Jerry Todd**, created by [**Leo Edwards**](https://en.wikipedia.org/wiki/Edward_Edson_Lee), the game is based on a story by [**Gianluca Gemelli**](http://teladoiolanarrativa.blogspot.com/) (Italian Translator for [Jerry Todd](https://www.amazon.it/dp/B09XXWLQSB?binding=paperback&sr=1-8)'s books), adapted by **Marco Giorgini**, and made with **StoryTllr**.
 
 *Work first, ice cream afterwards. Provided the Bulbs agree.*
