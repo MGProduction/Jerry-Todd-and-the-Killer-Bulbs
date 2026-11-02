@@ -1,0 +1,97 @@
+[Il granaio di Red]
+parla red
+e
+[Il cortile del granaio di Red]
+esamina lanciapomodori
+s
+[Il portico di Cap Tinkertop]
+esamina vaso
+prendi chiave
+sblocca porta
+e
+[Dentro casa di Cap]
+esamina biglietto
+prendi cacciavite
+o
+[Il portico di Cap Tinkertop]
+s
+so
+[Il sentiero lungo il ruscello]
+esamina cespugli
+ne
+[Il portico di Cap Tinkertop]
+n
+[Il cortile del granaio di Red]
+stacca elastico
+s
+[Il portico di Cap Tinkertop]
+so
+[Il sentiero lungo il ruscello]
+prendi sasso
+tira nido
+[La stradina del paese — arrivo automatico]
+e
+[Il vivaio dei Bulb]
+parla signora bulb
+esamina impronte
+e
+[Dietro la siepe del vivaio]
+nasconditi
+spingi strieker
+esamina camion
+prendi cappello
+segui camion
+[Sotto il telone del camion]
+esamina cassa
+apri cassa
+aspetta
+[Il cancello della villa — arrivo automatico]
+esamina targhetta
+esamina muro
+s
+[Il telefono pubblico]
+esamina cabina
+prendi moneta
+telefona
+[Il cancello della villa — ritorno automatico con gli amici]
+scala muro
+aspetta
+n
+[Il giardino della villa]
+prendi vanga
+scava terra
+apri cassa
+s
+[Il cancello della villa]
+s
+[Il telefono pubblico]
+e
+[La stradina del paese]
+e
+[Il vivaio dei Bulb]
+usa cacciavite
+n
+[La serra del vivaio]
+n
+[La stanza dei rinvasi]
+esamina scaffale
+sposta scaffale
+e
+[Dietro lo scaffale]
+slega cap
+[La stanza dei rinvasi — ritorno automatico]
+spingi banco
+prendi assi
+usa assi
+e
+[Dietro lo scaffale]
+prendi sedia
+o
+[La stanza dei rinvasi]
+usa sedia
+corri
+[L'ufficio di Bill Hadley]
+parla bill
+[La stanza dei rinvasi — finale automatico]
+[I Bulb smascherati]
+FINE
