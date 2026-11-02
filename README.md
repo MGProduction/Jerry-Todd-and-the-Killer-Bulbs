@@ -19,8 +19,8 @@ Set in the literary world of **Jerry Todd**, created by [**Leo Edwards**](https:
 
 ## Play and download
 This game is available in two languages, and you can freely play each of them on itch.io:
-- [English](https://marcogiorgini.itch.io/jerry-todd-and-the-killer-bulbs)
-- [Italian](https://marcogiorgini.itch.io/jerry-todd-e-i-bulbi-assassini)
+- [English](https://marcogiorgini.itch.io/jerry-todd-and-the-killer-bulbs) - [eng walkthrough](_pub/walkthrough_en.txt)
+- [Italian](https://marcogiorgini.itch.io/jerry-todd-e-i-bulbi-assassini) - [ita walkthrough](_pub/walkthrough_it.txt)
 
 ## Game Source License
 Game source is released under the MIT License. To read and modify these **StoryTllr** source files easily, you need the **Treepad Lite** editor (or something that can read its easy structured text file).
