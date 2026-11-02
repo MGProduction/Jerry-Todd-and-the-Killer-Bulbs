@@ -19,7 +19,7 @@ Set in the literary world of **Jerry Todd**, created by [**Leo Edwards**](https:
 
 ## Play and download
 This game is available in two languages, and you can freely play each of them on itch.io:
-- [English](https://marcogiorgini.itch.io/jerry-todd-and-the-killer-bulbs
+- [English](https://marcogiorgini.itch.io/jerry-todd-and-the-killer-bulbs)
 - [Italian](https://marcogiorgini.itch.io/jerry-todd-e-i-bulbi-assassini)
 
 ## Game Source License
