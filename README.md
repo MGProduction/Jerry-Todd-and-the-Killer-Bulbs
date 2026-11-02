@@ -23,7 +23,7 @@ This game is available in two languages, and you can freely play each of them on
 - [Italian](https://marcogiorgini.itch.io/jerry-todd-e-i-bulbi-assassini)
 
 ## Game Source License
-Game source is released under the MIT License. 
+Game source is released under the MIT License. To read and modify these **StoryTllr** source files easily, you need the **Treepad Lite** editor (or something that can read its easy structured text file).
 
 ## AI disclaimers
 This is NOT an AI-generated game, but it contains AI images (so there's *no license* for them), and AI has also been used for testing purposes.
