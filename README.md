@@ -16,3 +16,14 @@ Available in English and Italian.
 Set in the literary world of **Jerry Todd**, created by [**Leo Edwards**](https://en.wikipedia.org/wiki/Edward_Edson_Lee), the game is based on a story by [**Gianluca Gemelli**](http://teladoiolanarrativa.blogspot.com/) (Italian Translator for [Jerry Todd](https://www.amazon.it/dp/B09XXWLQSB?binding=paperback&sr=1-8)'s books), adapted by **Marco Giorgini**, and made with **StoryTllr**.
 
 *Work first, ice cream afterwards. Provided the Bulbs agree.*
+
+## Play and download
+This game is available in two languages, and you can freely play each of them on itch.io:
+- [English](https://marcogiorgini.itch.io/jerry-todd-and-the-killer-bulbs
+- [Italian](https://marcogiorgini.itch.io/jerry-todd-e-i-bulbi-assassini)
+
+## Game Source License
+Game source is released under the MIT License. 
+
+## AI disclaimers
+This is NOT an AI-generated game, but it contains AI images (so there's *no license* for them), and AI has also been used for testing purposes.
