@@ -1,0 +1,97 @@
+[Red's barn]
+talk red
+east
+[Red's barn yard]
+examine launcher
+south
+[Cap Tinkertop's porch]
+examine flowerpot
+take key
+unlock door
+east
+[Inside Cap's house]
+examine note
+take screwdriver
+west
+[Cap Tinkertop's porch]
+south
+southwest
+[Riverside path]
+examine bushes
+northeast
+[Cap Tinkertop's porch]
+north
+[Red's barn yard]
+remove rubber band
+south
+[Cap Tinkertop's porch]
+southwest
+[Riverside path]
+take stone
+shoot nest
+[The town lane — automatic arrival]
+east
+[Bulb's nursery]
+talk mrs bulb
+examine tracks
+east
+[Behind the nursery hedge]
+hide
+push striekers
+examine truck
+take hat
+follow truck
+[Under the truck's tarpaulin]
+examine crate
+open crate
+wait
+[The villa gate — automatic arrival]
+examine nameplate
+examine wall
+south
+[The public telephone]
+examine booth
+take coin
+call
+[The villa gate — automatic return with your friends]
+climb wall
+wait
+north
+[The villa garden]
+take spade
+dig earth
+open crate
+south
+[The villa gate]
+south
+[The public telephone]
+east
+[The town lane]
+east
+[Bulb's nursery]
+use screwdriver
+north
+[The nursery glasshouse]
+north
+[The potting room]
+examine shelf
+move shelf
+east
+[Behind the shelf]
+untie cap
+[The potting room — automatic return]
+push bench
+take boards
+use boards
+east
+[Behind the shelf]
+take chair
+west
+[The potting room]
+use chair
+run
+[Bill Hadley's office]
+talk bill
+[The potting room — automatic ending]
+[The Bulbs exposed]
+THE END
