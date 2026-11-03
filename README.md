@@ -1,7 +1,7 @@
 # Jerry Todd and the Killer Bulbs
 ![Title screen](_pub/title_screen.png)
 
-A sweltering morning, four penniless friends, and a powerful craving for ice cream. What could possibly go wrong?
+**A sweltering morning, four penniless friends, and a powerful craving for ice cream. What could possibly go wrong?**
 
 Cap Tinkertop promised to pay Jerry and his friends for helping with a few jobs. But when the boys arrive at his house, Cap is nowhere to be found. A note leads them to the Bulbs’ nursery, where a simple search soon becomes an adventure involving suspicious footprints, secret stakeouts, and crates with mysterious contents.
 
